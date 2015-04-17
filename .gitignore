@@ -1,6 +1,10 @@
 *~
 *.pdf
-*.eps
-*.jpg
-*.jpeg
-*.png
+*.dvi
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.out
+*.toc
