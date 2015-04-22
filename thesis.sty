@@ -1,0 +1,530 @@
+% *********************************************************
+% *                                                       *
+% *      Substyle for Ph.D. thesis of Nico Hamaus         *
+% *                                                       *
+% *********************************************************
+%
+% FILENAME:   thesis.sty
+%
+% ABSTRACT:   The page layout is adapted in a way I
+%             like better than the original article
+%             or report style of LaTeX
+%
+% USAGE:      \documentstyle[thesis,<options>]{<report>}
+%
+% EXCEPTIONS: So far no exceptions
+%
+% HISTORY:    Originaly written by Urs Mueller, March 1992
+%             Adapted by Michael Kocheisen, July 1996
+%             Adapted by Beat Flepp, February 1997
+%             Adapted by Alex Rhomberg, July 1999
+%             Adapted by Rolf Enzler, May 2003
+%             Adapted by Marco Wirz, November 2005
+%             Adapted by Lucas Lombriser, April 2011
+%             Adapted by Nico Hamaus, Mai 2012
+%
+% 06/21/92:   Add \chapter* to table of contents, excepting
+%             the table of contents itself (um)
+% 01/21/93:   New environment: funcdescription (um)
+% 06/21/93:   Minor changes in page dimensions (um)
+%
+% 07/16/96:   Bug in subsubsection fixed (mk)
+%             Caption: \def\figurename, \def\tablename added (mk)
+%
+% 01/10/97:   Allows the selection file 'format.tex' to
+%             choose the paper format (A4 or A5) (bf)
+% 05/16/98:   Subsubsection with {\bf} style (bf)
+%
+% 07/10/98:   New environment: myitemize (bf)
+%
+% 07/11/98:   Add \list environment to \caption
+%
+% 03/04/99:   Do not add certain \chapter* to TOC (bf) by 
+%             using \addcontentsfalse and \addcontentstrue
+%
+% 9.6.00 :    Changed captions: name bold, rest italic (ar)
+%             One and a half line set with item, only that widths are now
+%             correct. More lines set in a block
+%
+% 08/07/03:   Changed captions:
+% (re)          - small, normalfont (not italic)
+%               - period instead of colon, followed by 2 spaces
+%               - distinguish between figure and table captions.
+%             Changed section numbering depth to 2
+%             Changed labelitemii
+%             Replaced old LaTeX font commands with new ones
+%               (e.g. {\bf} with \bfseries)
+%             Changed font size and style of headings (LLNCS like); plus
+%               added the `headingsroman' definition
+%
+% 04/26/11:   Changed section numbering
+%             Changed title page to requirements of MNF UZH
+%
+% *********************************************************
+%
+
+\typeout{Substyle for Aurel Schneider's Ph.D. thesis} 
+
+
+
+%
+% DEFAULTS
+%
+\def\contentsname{Contents}
+
+
+
+%
+% PAGE LAYOUT
+%
+
+\setlength{\paperheight}{297.3mm}
+\setlength{\paperwidth}{210.224mm}
+\newif\ifafourpage\afourpagefalse    % Create flag and set false/true
+\input format                        % Include format definition 
+
+\ifafourpage                         % A4 page on A4 paper
+  \typeout{- A4 page on A4 paper -}  % (DIN A4 = 210 x 297 mm)
+  \setlength{\topmargin}{-7.6mm}     % original: -12.6mm
+  \setlength{\headsep}{1cm}
+  \setlength{\headheight}{0.6cm}
+  \setlength{\textheight}{23.5cm}
+  \setlength{\textwidth}{15.0cm}
+  \setlength{\oddsidemargin}{2.85mm}
+  \setlength{\evensidemargin}{3.85mm}
+\else                                % A5 page on A4 paper
+  \typeout{- A5 page on A4 paper -}  % (DIN A5 = 148.5 x 210 mm)
+  \setlength{\topmargin}{-12.6mm}    % original: -12.6mm
+  \setlength{\headsep}{0.5cm}        % = 14.22656pt
+  \setlength{\headheight}{0.6cm}
+  \setlength{\textheight}{17.0cm}
+  \setlength{\textwidth}{10.8cm}
+  \setlength{\oddsidemargin}{-5.15mm}
+  \setlength{\evensidemargin}{-5.15mm}
+  \setlength{\paperheight}{210.224mm}
+  \setlength{\paperwidth}{148.65mm}
+\fi
+
+\setlength{\footskip}{1cm}
+\newlength{\footheight}              % for compatibility with new latex 
+\setlength{\footheight}{1cm}
+
+%\setlength{\parskip}{0ex plus 0ex minus 0ex}
+\raggedbottom
+\widowpenalty=1000\relax  % single line at the beginning of a page
+\clubpenalty=1000\relax   % single line at the end of a page
+
+
+
+%
+% ITEMIZATION LABELS
+%
+\def\labelitemi{$\bullet$}
+\def\labelitemii{--}
+\def\labelitemiii{$\ast$}
+\def\labelitemiv{$\cdot$}
+
+
+
+%
+% CAPTIONS OF FIGURES AND TABLES
+%
+\def\figurename{Figure}
+\def\tablename{Table}
+\def\fnum@figure{\figurename{} \thefigure}
+\def\fnum@table{\tablename{} \thetable}
+
+\newcounter{algorithm}
+\def\algorithmname{Algorithm}
+\renewcommand \thealgorithm
+     {\@arabic\c@algorithm}
+\def\fps@algorithm{tbp}
+\def\ftype@algorithm{2}
+\def\ext@algorithm{lot}
+\def\fnum@algorithm{\algorithmname~\thealgorithm}
+\newenvironment{algorithm}
+               {\@float{algorithm}}
+               {\end@float}
+\newenvironment{algorithm*}
+               {\@dblfloat{algorithm}}
+               {\end@dblfloat}
+
+\def\figurecapstring{figure}
+\def\tablecapstring{table}
+\long\def\@makecaption#1#2{%
+  \ifx\@captype\figurecapstring    % figure caption (below figure)
+    \setlength\abovecaptionskip{10\p@}
+    \setlength\belowcaptionskip{0\p@}
+  \fi
+  \ifx\@captype\tablecapstring     % table caption (above table)
+    \setlength\abovecaptionskip{0\p@}
+    \setlength\belowcaptionskip{10\p@}
+  \fi
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\small{\bfseries #1.}~~#2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    \ifdim \wd\@tempboxa > 1.5\hsize
+      {\small{\bfseries #1.}~~#2}\par
+    \else
+      \newcommand{\entrylabel}[1]{\mbox{{\small\bfseries #1.~~}}}
+      \begin{list}{\small {\bfseries #1.~~}}
+        {
+          \renewcommand{\makelabel}{\entrylabel}
+          \settowidth{\labelwidth}{\small\bfseries #1.~~}
+          \setlength{\labelsep}{0pt}
+          \setlength{\leftmargin}{\labelwidth}
+          \addtolength{\leftmargin}{\labelsep}
+          \setlength{\topsep}{0pt}
+          }
+        \item {\small #2}
+      \end{list}
+    \fi
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+\def\LT@makecaption#1#2#3{%
+  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
+        \vskip\abovecaptionskip\vskip-1ex
+    \sbox\@tempboxa{{\small{\bfseries#1{#2.}} #3}}%
+    \ifdim\wd\@tempboxa>\hsize
+      {\small{\bfseries#1{#2.}} #3}%
+    \else
+      \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+    \fi
+    \endgraf\vskip\belowcaptionskip}%
+  \hss}}}
+
+%
+% INCLUDE GEM IMG PICTURES
+%
+\gdef\IncludeGemIMG#1#2#3#4{\leavevmode
+ \vbox to #2{\vfil\hfil
+ \hbox to #1{\special{CS!g #3 #4}
+ \hfil}}}
+
+
+
+%
+% SECTIONING
+%
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\def\thepart {\Roman{part}}
+\def\thechapter {\arabic{chapter}}
+\def\thesection {\thechapter.\arabic{section}}
+\def\thesubsection {\thesection.\arabic{subsection}}
+\def\thesubsubsection {\thesubsection.\arabic{subsubsection}}
+\def\theparagraph {\thesubsubsection.\arabic{paragraph}}
+\def\thesubparagraph {\theparagraph.\arabic{subparagraph}}
+
+\def\@makechapterhead#1{ \vspace*{1ex} { \parindent 0pt \raggedleft
+   \ifnum \c@secnumdepth >\m@ne
+%     \Large\bfseries \@chapapp{} \thechapter: \hskip 0.4em
+      {\fontsize{80}{100}\usefont{OT1}{ppl}{b}{sc} \thechapter \hskip 0.4em\\}
+     \vspace{1.5cm}
+     \fi
+%   \Large\bfseries #1\par
+   {\fontsize{30}{40}\usefont{OT1}{ppl}{b}{sc} #1\par}
+   \nobreak \vskip 4ex \vspace{1.0cm} }
+   \markboth{\@chapapp\ \thechapter: #1}{\@chapapp\ \thechapter: #1}
+   }
+
+\def\@makeschapterhead#1{ \vspace*{1ex} { \parindent 0pt \raggedright
+  \Large\bfseries #1\par
+  \nobreak \vskip 3ex }
+%  \markboth{#1}{#1}
+  }
+
+\def\chapter{\cleardoublepage \thispagestyle{empty} \global\@topnum\z@
+\@afterindentfalse \secdef\@chapter\@schapter}
+
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+  \refstepcounter{chapter}
+  \typeout{\@chapapp\space\thechapter: #1}
+  \addcontentsline{toc}{chapter}{\protect
+  \numberline{\thechapter.}#1}\else
+  \addcontentsline{toc}{chapter}{#1}\fi
+  \chaptermark{#1}
+  \addtocontents{lof}{\protect\addvspace{10pt}}
+\addtocontents{lot}{\protect\addvspace{10pt}} \if@twocolumn
+\@topnewpage[\@makechapterhead{#2}]
+  \else \@makechapterhead{#2}
+  \@afterheading \fi}
+
+\def\@schapter#1{
+%  \ifaddcontents
+%    \typeout{\@chapapp: #1}                     % typeout \chapter*
+%    \addcontentsline{toc}{chapter}{#1}          % and add it to the
+%  \fi                                           % table of contents
+  \if@twocolumn \@topnewpage[\@makeschapterhead{#1}]
+  \else \@makeschapterhead{#1}
+  \@afterheading\fi}
+
+\newif\ifaddcontents\addcontentsfalse           % Create flag and set false.
+\def\tableofcontents{\@restonecolfalse
+  \if@twocolumn\@restonecoltrue\onecolumn\fi
+  \chapter*{\contentsname}
+  \addcontentstrue                              % Add \chapter* to
+  \@starttoc{toc}                               % toc from here on
+  \if@restonecol\twocolumn\fi}
+
+\def\section#1{
+  \@startsection{section}{1}{\z@}
+    {-3.25ex plus -1ex minus -.2ex}{2.3ex plus .2ex}
+    {\large\bfseries}{#1}
+  \markright{\thesection.\ #1}
+  }
+
+\def\subsection{
+  \@startsection{subsection}{2}{\z@}
+    {-3.25ex plus -1ex minus -.2ex}{1.5ex}
+    {\normalsize\bfseries}
+  }
+
+\def\subsubsection{
+  \@startsection{subsubsection}{3}{\z@}
+    {-3.25ex plus -1ex minus -.2ex}{1.5ex}
+    {\normalsize\bfseries}
+  }
+
+\def\paragraph{
+  \@startsection{paragraph}{4}{\z@}
+    {-3.25ex plus -1ex minus -.2ex}{1.5ex}
+    {\normalsize\bfseries}
+  }
+
+\def\@sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth
+     \def\@svsec{}\else
+     \refstepcounter{#1}\edef\@svsec{\csname the#1\endcsname.\hskip 0.4em }\fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@
+        \begingroup #6\relax
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M #8\par}%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname.}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\@svsec #8\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname.}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+
+
+
+%
+% RUNNING HEAD MACROS
+%
+\def\ps@headfoot
+  {
+  \let\@mkboth\@gobbletwo
+  \def\@oddhead{\kern 0pt
+    \vbox{\noindent\makebox[\textwidth][l]
+            {\rmfamily\normalsize\rightmark\hfill\normalsize\thepage}
+          \hbox{\rule[0pt]{0pt}{1ex}}
+          \kern -2.66667pt \noindent\makebox[\textwidth][l]
+            {\hrulefill}}}
+  \def\@oddfoot{}
+  \def\@evenhead{\kern 0pt
+    \vbox{\noindent\makebox[\textwidth][l]
+            {\rmfamily\normalsize\thepage\hfill\footnotesize\leftmark}
+          \hbox{\rule[0pt]{0pt}{1ex}}
+          \kern -2.66667pt \noindent\makebox[\textwidth][l]
+            {\hrulefill}}}
+  \def\@evenfoot{}
+  }
+
+%started with headings, sticking with headings
+
+\newdimen\headlineindent             % dimension for space between
+\headlineindent=1.166cm              % number and text of headings.
+
+\if@twoside
+  \def\ps@headings{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    %\def\@evenhead{\small\thepage\hfil\slshape\leftmark}%
+    %\def\@oddhead{\small{\slshape\rightmark}\hfil\thepage}%
+   \def\@evenhead{\scshape\small\rlap{\oldstylenums{\thepage}}%
+                  \hspace{\headlineindent}%
+                  \hfil\leftmark}
+   \def\@oddhead{\scshape\small\rightmark\hfil\hspace{\headlineindent}%
+                 \llap{\oldstylenums{\thepage}}}
+    %snipped uppercase stuff
+    %don't want no stinking uppercase in my headings
+    \let\@mkboth\@gobbletwo
+    \let\chaptermark\@gobble
+    \let\sectionmark\@gobble
+  }
+  % Nearly the same again; defined as new headings style `headingsroman'
+  % (to avoid roman oldstylenums in italics) 
+  \def\ps@headingsroman{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    %\def\@evenhead{\small\thepage\hfil\slshape\leftmark}%
+    %\def\@oddhead{\small{\slshape\rightmark}\hfil\thepage}%
+   \def\@evenhead{\normalfont\small\rlap{\thepage}\hspace{\headlineindent}%
+                  \leftmark\hfil}
+   \def\@oddhead{\normalfont\small\hfil\rightmark\hspace{\headlineindent}%
+                 \llap{\thepage}}
+    %snipped uppercase stuff
+    %don't want no stinking uppercase in my headings
+    \let\@mkboth\@gobbletwo
+    \let\chaptermark\@gobble
+    \let\sectionmark\@gobble
+  }
+\else
+  \def\ps@headings{%
+    \let\@oddfoot\@empty
+    \def\@oddhead{\small{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\@gobbletwo
+    \let\chaptermark\@gobble
+    \let\sectionmark\@gobble
+\fi
+
+
+
+%
+% VARIOUS OPTIONS
+%
+\tolerance=2000
+\hfuzz=1pt                      % 1pt overfull hboxes allowed
+\frenchspacing                  % no extra space at end of sentences
+\pagestyle{headfoot}            % defined above
+
+
+
+%
+% SOME BUG FIXES
+%
+
+% Index in report style: "@makeschapterhead*" replaced by
+% "chapter*" otherwise the index title is printed wrong (um)
+\def\theindex{\@restonecoltrue\if@twocolumn\@restonecolfalse\fi
+ \columnseprule \z@
+ \columnsep 35pt\twocolumn[\chapter*{\indexname}]
+ \@mkboth{\uppercase{\indexname}}{\uppercase{\indexname}}%
+ \thispagestyle{plain}\parindent\z@
+ \parskip\z@ plus .3pt\relax\let\item\@idxitem}
+
+
+
+%
+% THE GENERIC ETH-THESIS COMMANDS (adopted from Edi Saeckinger)
+%
+\def\dissnum#1{\def\dissnumstring{#1}}
+\def\dissnumstring{}
+\def\degree#1{\def\degreestring{#1}}
+\def\degreestring{Doctor of Sciences}
+\def\author#1{\def\authorstring{#1}}
+\def\authorstring{}
+\def\acatitle#1{\def\acatitlestring{#1}}
+\def\acatitlestring{}
+\def\dateofbirth#1{\def\dateofbirthstring{#1}}
+\def\dateofbirthstring{}
+\def\citizen#1{\def\citizenstring{#1}}
+\def\citizenstring{}
+\def\examiner#1{\def\examinerstring{#1}}
+\def\examinerstring{}
+\def\coexaminer#1{\def\coexaminerstring{#1}}
+\def\coexaminerstring{}
+\def\cocoexaminer#1{\def\cocoexaminerstring{#1}}
+\def\cocoexaminerstring{}
+
+
+
+%
+% TITLEPAGE
+%
+\def\maketitlepage{\begin{titlepage}
+\let\footnotesize\small \let\footnoterule\relax \setcounter{page}{1}
+\null
+
+% \vspace{-2cm}
+% \begin{flushleft}
+% \textsc{Diss.\ ETH No.\ \dissnumstring}
+% \end{flushleft}
+% \vfil\vspace{1cm}
+% \begin{center}
+% \huge\bfseries\@title
+% \end{center}
+% \vfil\vspace{1cm}
+% \begin{center}
+% A dissertation submitted to the \par\medskip
+% \textlarger{\textsc{ETH ZURICH}} \par
+% \textlarger{} \par\medskip
+% for the degree of \par
+% \degreestring
+% \end{center}
+% \vfil
+% \begin{center}
+% presented by \par\medskip
+% \textlarger{\textsc{\authorstring}} \par\medskip
+% \acatitlestring \par
+% born \dateofbirthstring \par
+% citizen of \citizenstring
+% \end{center}
+% \vfil
+% \begin{center}
+% accepted on the recommendation of \par\medskip
+% \examinerstring, examiner \par
+% \coexaminerstring, co-examiner \par
+% %%\cocoexaminerstring, co-examiner
+% \end{center}
+% \vfil
+% \begin{center}
+% \@date
+% \end{center}
+% \@thanks
+% \null
+
+%\vspace{-2cm}
+%\vfil\vspace{1cm}
+\begin{center}
+\LARGE\bfseries\sc\@title
+\vspace{1cm} \hrule
+\end{center}
+\vfil\vspace{1cm}
+\begin{large}
+\begin{center}
+{\bf Dissertation} \vspace{3mm} \\
+zur  \vspace{3mm} \\
+Erlangung der naturwissenschaftlichen Doktorw\"urde \\
+(Dr.~sc.~nat.) \vspace{3mm} \\
+vorgelegt der \vspace{3mm} \\
+Mathematisch-naturwissenschaftlichen Fakult\"at \vspace{3mm} \\
+der \vspace{3mm} \\
+Universit\"at Z\"urich \vspace{3mm} \\
+von \vspace{3mm} \\
+\par\medskip
+\textlarger{\textsc{\authorstring}} \par\medskip
+\acatitlestring \par
+von \vspace{3mm} \\
+\citizenstring
+\end{center}
+\vfil
+\begin{center}
+Promotionskomitee \vspace{3mm} \\
+\examinerstring~(Vorsitz)\par
+\coexaminerstring \par
+\cocoexaminerstring
+\end{center}
+\vfil
+\begin{center}
+\@date
+\end{center}
+\@thanks
+\null
+\end{large}
+
+\end{titlepage}
+\setcounter{footnote}{0} \let\thanks\relax
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax
+\clearpage
+\thispagestyle{empty}
+% \cleardoublepage
+}

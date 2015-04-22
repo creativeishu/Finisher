@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Abstract
+\newenvironment{abstracts}{%
+\hspace{+0.4\parindent}\begin{minipage}{.9\linewidth}  {\bf Abstract\\}}
+{\end{minipage}\par}
+
+%Zusammenfassung
+\newenvironment{zusammenfassung}{%
+\hspace{+0.4\parindent}\begin{minipage}{0.9\linewidth}  {\bf Zusammenfassung\\}}
+{\end{minipage}\par}
+
+%paper abstract
+\newenvironment{paperabstract}{%
+\hspace{+1.4\parindent}\begin{minipage}{.9\linewidth}  {\bf Abstract\\}}
+{\end{minipage}\par}
+
+%Affiliations
+\newcommand{\footnoteremember}[2]{%
+\footnote{#2\label{#1}}\newcounter{#1}\setcounter{#1}{\value{footnote}}
+}
+\newcommand{\footnoterecall}[1]{%
+\hyperref[#1]{\footnotemark[\value{#1}]}
+}
+
+
+% Referencing
+
+\newcommand\Ref[1]     {Ref.\,\cite{#1}}
+\newcommand\Refs[1]    {Refs\,\cite{#1}}
+%\newcommand\refr[1]      {ref.\,\cite{#1}}
+%\newcommand\refrs[1]    {refs\,\cite{#1}}
+\newcommand\refr[1]      {Ref.\,\cite{#1}}
+\newcommand\refrs[1]    {Refs\,\cite{#1}}
+
+\newcommand\Eqn[1]     {Eq.\,(\ref{#1})}
+\newcommand\Eqns[2]    {Eqs\,(\ref{#1}) and~(\ref{#2})}
+\newcommand\Eqnss[2]   {Eqs\,(\ref{#1})--(\ref{#2})}
+%\newcommand\eqn[1]     {eq.\,(\ref{#1})}
+%\newcommand\eqns[2]    {eqs.\,(\ref{#1}) and~(\ref{#2})}
+%\newcommand\eqnss[2]   {eqs.\,(\ref{#1})--(\ref{#2})}
+\newcommand\eqn[1]     {Eq.\,(\ref{#1})}
+\newcommand\eqns[2]    {Eqs\,(\ref{#1}) and~(\ref{#2})}
+\newcommand\eqnss[2]   {Eqs\,(\ref{#1})--(\ref{#2})}
+
+\newcommand\Fig[1]     {Fig.\,{\ref{#1}}}
+\newcommand\Figs[2]    {Figs\,{\ref{#1}} and~{\ref{#2}}}
+%\newcommand\fig[1]     {fig.\,{\ref{#1}}}
+%\newcommand\figs[2]    {figs\,\ref{#1} and~{\ref{#2}}}
+\newcommand\fig[1]     {Fig.\,{\ref{#1}}}
+\newcommand\figs[2]    {Figs\,\ref{#1} and~{\ref{#2}}}
+
+%\newcommand\Sect[1]    {Sect.\,{\ref{#1}}}
+%\newcommand\Sects[2]   {Sects.\,(\ref{#1}) and~(\ref{#2})}
+%\newcommand\sect[1]    {sect.\,{\ref{#1}}}
+%\newcommand\sects[2]   {sects.\,(\ref{#1}) and~(\ref{#2})}
+\newcommand\Sect[1]    {\S\ref{#1}}
+\newcommand\App[1]     {Appendix~\ref{#1}}
+%\newcommand\app[1]     {appendix~\ref{#1}}
+\newcommand\app[1]     {Appendix~\ref{#1}}
+
+\newcommand\Tab[1]     {Table~\ref{#1}}
+%\newcommand\tab[1]     {table~\ref{#1}}
+\newcommand\tab[1]     {Table~\ref{#1}}
+
+\newcommand\nt         {\notag}
+\newcommand\nn         {\nonumber}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% JOURNAL SHORTCUTS
+
+\def\mnras{{Mon.~ Not.~ R.~ Astron.~ Soc.~}}
+\def\pr{{Phys.~ Rep.~ }}
+\def\prd{{Phys.~ Rev.~ D.~}}
+\def\prl{{Phys.~ Rev.~ Lett.~}}
+\def\apj{{Astrophys.~ J.~}}
+\def\apjs{{Astrophys.~ J.~ Suppl.~}}
+\def\apjl{{Astrophys.~ J.~ Lett.~}}
+\def\aa{{Astron.~ Astrophys.~}}
+\def\aj{{Astron.~ Journal}}
+\def\nat{{Nature (London)~}}
+\def\astropart{{Astro-particle Phys.~}}
+\def\rvmp{{Rev.~ Mod.~ Phys.~}}
+
+\def\mnras{{MNRAS}}
+\def\pr{{PR}}
+\def\prd{{PRD}}
+\def\prl{{PRL}}
+\def\apj{{ApJ}}
+\def\apjs{{ApJS}}
+\def\apjl{{ApJL}}
+\def\aap{{A\&A}}
+\def\nat{{Nature}}
+\def\astropart{{Astro-particle Phys.~}}
+\def\rvmp{{Rev.~ Mod.~ Phys.~}}
+\def\physrep{{Phys.~ Rep.~}}
+\def\jcap{Journal of Cosmology and Astro-Particle Physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% EQUATIONS
+
+%\newcommand{\be}{\begin{equation}}
+%\newcommand{\ee}{\end{equation}}
+%\newcommand{\ba}{\begin{eqnarray}}
+%\newcommand{\ea}{\end{eqnarray}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\Like{{\mathcal L}}
+\def\Fish{{\mathcal F}}
+
+\def\nhat{{\hat{\bf n}}}
+
+\def\Lin{{\rm Lin}}
+\def\NL{{\rm NL}}
+
+\def\rperp{{{\bf r}_{\perp}}}
+
+\def\pp1{{\prime}}
+\def\pp2{{\prime\prime}}
+
+\def\2D{{\rm 2D}}
+
+\def\Vu{{V_{\mu}}}
+
+\def\pdot{\dot{\Phi}}
+%\def\ddot{\dot{\delta}}
+\def\Fka{{\mathcal F}(k)}
+
+\def\expn{{\left<N_i\right>}}
+\def\expnA{{\left<N_A\right>}}
+\def\expnB{{\left<N_B\right>}}
+
+\def\cyc{{\rm cyc}}
+
+\def\SN{{\mathcal S}/{\mathcal N}}
+
+\def\T{{\rm T}}
+\def\g{{\rm g}}
+\def\h{{\rm h}}
+
+\def\bx{{\bf x}}
+\def\br{{\bf r}}
+\def\bu{{\bf u}}
+\def\bk{{\bf k}}
+\def\bq{{\bf q}}
+\def\by{{\bf y}}
+
+
+\def\cent{{\rm cent}}
+\def\1Loop{{\rm 1Loop}}
+
+\def\rhob{\bar{\rho}}
+\def\Hub{{\rm km}s^{-1}{\rm Mpc}^{-1}}
+\def\Msol{h^{-1}M_{\odot}}
+\def\kpc{\, h^{-1}{\rm kpc}}
+\def\Mpc{\, h^{-1}{\rm Mpc}}
+\def\Mpccube{\, h^{-3} \, {\rm Mpc}^3}
+\def\Gpc{\, h^{-1}{\rm Gpc}}
+\def\Gpccube{\, h^{-3} \, {\rm Gpc}^3}
+\def\kMpc{\, h \, {\rm Mpc}^{-1}}
+
+\def\hh{{\rm hh}}
+\def\hd{{\rm h\delta}}
+\def\dd{{\delta\delta}}
+
+\def\Fs{F^{(\rm s)}}
+
+\def\signal{{\mathcal S}}
+\def\noise{{\mathcal N}}
+
+\def\oneH{{\rm 1H}}
+\def\twoH{{\rm 2H}}
+
+\def\dr{{\rm d}^3{\bf r}}
+\def\dx{{\rm d}^3{\bf x}}
+\def\dk{{\rm d}^3{\bf k}}
+\def\dq{{\rm d}^3{\bf q}}
+\def\dy{{\rm d}^3{\bf y}}
+\def\dM{{\rm d}M}
+\def\d{\delta}
+\def\te{\theta}
+\def\ds{\delta_s}
+\def\dt{\tilde \delta}
+\def\dD{\delta_{\rm D}}
+\def\del{\nabla}
+\def\knl{k_{n\ell}}
+\def\pl{L}
+
+\def\nbar{\bar{n}}
+\def\nbarg{\bar{n}_{\rm g}}
+\def\nbarh{\bar{n}_{\rm h}}
+
+\font\BF=cmmib10
+\font\BFs=cmmib10 scaled 833
+
+\def\ks{{\hbox{\BFs k}}}
+\def\xs{{\hbox{\BFs x}}}
+\def\p{{\hbox{\BF p}}}
+\def\q{{\hbox{\BF q}}}
+\def\v{{\hbox{\BF v}}}
+\def\u{{\hbox{\BF u}}}
+\def\by{{\hbox{\BF y}}}
+\def\tk{\hat k}
+\def\tvk{{\hat{\k}}}
+\def\tvq{{\hat{\q}}}
+\def\ttheta{\hat \theta}
+\def\tphi{\hat \varphi}
+\def\C{{\cal C}}
+\def\M{{\cal M}}
+\def\su{\sigma_u}
+
+
+\def\rpa{r_{\parallel}}
+\def\rpe{r_{\perp}}
+\def\spa{s_{\parallel}}
+\def\spe{s_{\perp}}
+
+\def\la{\mathrel{\mathpalette\fun <}}
+\def\ga{\mathrel{\mathpalette\fun >}}
+\def\fun#1#2{\lower3.6pt\vbox{\baselineskip0pt\lineskip.9pt
+        \ialign{$\mathsurround=0pt#1\hfill##\hfil$\crcr#2\crcr\sim\crcr}}}
+
+\def\s{{\rm s}}
+\def\h{{\rm h}}
+\def\ss{{\rm ss}}
+\def\hh{{\rm hh}}
+\def\hs{{\rm hs}}
+\def\1H{{\rm 1H}}
+\def\2H{{\rm 2H}}
+\def\NH{{N_{\rm h}}}
+\def\Ng{{N_{\rm g}}}
+\def\vir{{\rm vir}}
+\def\WDM{{\rm WDM}}
+\def\CDM{{\rm CDM}}
+\def\keV{{\rm keV}}
+\def\kms{{\rm km\,s^{-1}}}
+
+\def\cut{{\rm cut}}
+
+
+
+\def\obs{{\rm obs}}
+\def\mc{{\rm mc}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

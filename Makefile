@@ -1,5 +1,5 @@
-FILENAME = my_thesis
-BIBFILENAME = tail/bibliography
+FILENAME = thesis
+BIBFILENAME = tail/tbib
 .PHONY = clean
 
 $(FILENAME).pdf: $(FILENAME).dvi
@@ -13,8 +13,8 @@ $(FILENAME).dvi: $(FILENAME).tex $(BIBFILENAME).bib
 	pdflatex $(FILENAME)
 
 clean:
-	rm -f *.aux *.log *.bbl *.blg *.toc *.lof *.lot *.out *.dvi *.ps
-	rm -f head/*.aux head/*.log
-	rm -f main/*.aux main/*.log
-	rm -f tail/*.aux tail/*.log
-	rm -f papers/*.aux papers/*.log
+	rm -f *.aux *.log *.bbl *.blg *.toc *.lof *.lot *.out *.dvi *.ps *~
+	rm -f head/*.aux head/*.log *~
+	rm -f main/*.aux main/*.log *~
+	rm -f tail/*.aux tail/*.log *~
+	rm -f papers/*.aux papers/*.log *~
