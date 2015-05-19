@@ -8,19 +8,21 @@ by a cosmological constant. Finally a non-interacting dark matter is essential
 to explain the kinematics of galaxies in clusters, lightcurves of galaxies, 
 gravitational lensing etc. A comprehensive model, the so-called $\Lambda$CDM,
 is very successful in explaning most of the observations independently and 
-combined constraints tells us that our Universe is composed of almost 70$\%$
-dark-energy the form of cosmological constant, about 25$\%$ non-interacting
-cold dark-matter and only 5$\%$ of the baryonic/ordinary matter. 
+combined constraints tells us that our Universe is composed of about 70$\%$
+dark-energy in the form of cosmological constant $\Lambda$, about 25$\%$ non-interacting
+cold dark-matter (CDM) and only 5$\%$ of the baryonic/ordinary matter. 
 
 %------------------------------------------------------------------------------
+
+
 
 \section{An Expanding Universe}
 
 A stationary Universe would be boring, we have an expanding one - even better its
-accelerating. The evidences are found in various probes extending to SNe-Ia \cite{}, 
+accelerating. The evidences are found in various probes like SNe-Ia \cite{}, 
 CMB \cite{}, BAO \cite{}, galaxy clustering \cite{}, Lyman alpha \cite{} etc. 
 The state-of-the-art was seeded when somebody sees something \cite{} which is 
-further improved/informed by someone else \cite{}.
+further improved/informed by someone else \cite{}. 
 
 Adding the so-called {\it cosmological principle} to the Einstein's field equations, 
 which relates the Einstein tensor (geometrical object) to the Energy-Momentum tensor, 
@@ -39,11 +41,11 @@ derives the Friedmann equations:
 \end{equation}
 \\
 where, $\rho$ and $p$ are the density and pressure of the corressponding component of
-the energy density of the Universe, $a$ is the scale factor normalised to unity at present.
+the energy density of the Universe, $a$ is the scale factor normalised to unity at present ($a_0=1$).
 $K$ is the curvature parameter and follows $K=0$ for a flat Universe. $G$ and $c$ are
 the Gravitation constant and speed of light respectively. Related by equation \ref{eqn:fe1} 
 and \ref{eqn:fe2}, the dynamics and expansion of the Universe depend on its contents. 
-Combining these two equations give a third equation, also known as {\it thirt} Friedmann
+Combining these two equations give a third equation, also known as {\it third} Friedmann
 equation:
 
 \begin{equation}
@@ -55,7 +57,7 @@ equation:
 These three equations completely describe the dynamics of the Universe at all times.
 The first two equations relates the matter variables ($\rho$ and $p$) to the geometric
 variables ($a$ and $K$) whereas the third equation resembles the first law of 
-thermodynamics for adiabatically expanding Universe, which is a fair approximation.
+thermodynamics for adiabatically expanding Universe, fairly approximated.
 
 One can also relate $\rho$ and $p$ with an {\it equation of state}:
 
@@ -68,14 +70,84 @@ p = w \rho,
 $w$ is known as the equation of state variable for the respective component
 of the energy density of Universe. For non-relativistic matter like dust $w=0$,
 for photons and relativistic neutrinos $w=1/3$ whereas for a cosmological constant
-$w=-1$.
+$w=-1$. Analysing equation \ref{eqn:fe2}, suggests that $w<-1/3$ is essential to
+have an accelerating Universe ($\ddot{a}>0$) which is the general case for the
+dark-energy component with cosmological constant as a special case when $w=-1$.
 
+Combining equation \ref{eqn:fe3} and \ref{eqn:eos} for a constant $w$, we get:
 
+\begin{equation}
+	\rho(a) = \rho a^{3(1+w)}
+	\label{eqn:rho_t}
+\end{equation}
+\\
+giving the evolution of the densities of different components driven by their 
+respective equation of state. From now onwards we define $w$ to be the equation of 
+state of dark-energy unless stated otherwise.
 
+The curvature parameter $K$ in equation \ref{eqn:fe1} changes sign with the expansion 
+rate, therefore $K=0$ is a limiting case. Employing equation \ref{eqn:fe1} today with
+$K=0$ yields,
+
+\begin{equation}
+	\rho_{cr} \equiv \rho_0 = \dfrac{3H_0^2}{8\pi G}
+\end{equation}
+\\
+Where, we define the expansion rate of the Universe as:
+\begin{equation}
+	H(t) \equiv \dfrac{\dot{a}}{a}; H_0 \equiv H(t=0) = \dot{a}(t_0)
+\end{equation}
+
+The critical density $\rho_{cr}$ is a characteristic density of the Universe and is
+used to scale the densities of various components as,
+
+\begin{equation}
+	\Omega_m \equiv \dfrac{\rho_{m0}}{\rho_{cr}};
+	\Omega_r \equiv \dfrac{\rho_{r}}{\rho_{cr}};
+	\Omega_{\Lambda} \equiv \dfrac{\rho_{\Lambda}}{\rho_{cr}};
+	\label{eqn:Omega}
+\end{equation}
+
+Using equation \ref{eqn:Omega} and \ref{eqn:rho_t}, we can rewrite equation \ref{eqn:fe1} 
+as:
+
+\begin{equation}
+	E^2(a) \equiv \dfrac{H^2(a)}{H_0^2} = \left[\dfrac{\Omega_r}{a^4}
+	 + \dfrac{\Omega_m}{a^3} +
+	 \Omega_{\Lambda} - \dfrac{Kc^2}{a^2H_0^2}  \right]
+\end{equation}
+
+Now it is straightforward to calculate the age of the Universe at time $t$ from the big bang
+when scale factor was $a(t)$,
+\begin{equation}
+	H(a) = \dfrac{\dot{a}}{a} = \dfrac{1}{a} \dfrac{da}{dt},
+\end{equation}
+\\
+which gives,
+\begin{equation}
+	dt = \dfrac{da}{aH(a)},
+\end{equation}
+\\
+and therefore,
+\begin{equation}
+	t(a) = \int_0^a \dfrac{da^{\prime}}{a^{\prime}H(a^{\prime})}.
+\end{equation}
 
 %------------------------------------------------------------------------------
-
+\clearpage
 \section{Structure Formation in the Universe}
+
+An absolutely homogeneous Universe would be very easy to write mathematics for, but 
+would be boring. Thanks to the inhomogeneties in the Universe, we exist. The seeds
+of those homogeneties were the tiny quantum fluctuation, which in our concordance 
+model, is stretched up by the {\it inflation} and transform into small density
+perturbations. As a result of gravitational instability, these small perturbations 
+grow and form structures at various scales following baryonic physics. 
+So, the history of the  structure formation in the Universe, as described in the 
+concordance model can be studied in two parts: (i) {\it Linear theory}, when
+the size of the perturbation were small and higher orders terms can be ignored and 
+(ii) {\it Non-linear theory}, when the size of the perturbations grows significantly
+large that higher order terms cannot be ignored.
 
 Starting from CMB and Recombination era, talk about homogeneous Universe, matter-
 dominated Universe, dark-ages etc.
@@ -85,26 +157,225 @@ Hierarchical structures, observational constraints, Re-ionization.
 %----------------------------------------------
 \subsection{Linear theory}
 
-Derivation of growth equation, with minimal equations of physics, particularly
-continuity equation, Euler equation and Poisson equation and reach to this:
+
+We start by defining the density contrast, the relative deviation of the density
+from the mean background density of the Universe,
+
+\begin{equation}
+	\delta(r,t) = \dfrac{\rho(r,t) - \bar{\rho}(t)}{\bar{\rho}(t)},
+\end{equation}
+\\
+where, $\bar{\rho}(t)$ is the mean matter background density 
+of the Universe at that epoch. 
+As suggested by the tiny fluctuations in the CMB temperature anisotropy, 
+the perturbations in the density field at cosmological scales during 
+the early times were small. Hence, the higher powers of $\delta$ terms
+can be neglected and thus the predictions of linear perturbation theory
+are valid at early times.
+
+Assuming a matter dominated Universe, which is a good approximations at the
+early times, with dark-matter as the dominant component being collisionless. 
+So, we can approximate the matter as a pressureless fluid which is fairly 
+valid at large scales. The fluid equations for vanishing pressure are: 
+(i) Continuity equation, describing the conservation of matter; (ii) Euler
+equation, describing the equation of motion for the fluid and finally (iii) 
+Poisson equation describing the gravitational field. Solving these three 
+equations in linear regime, Fourier space and comoving coordinates will give
+the so-called {\it Growth equation}:
 
 \begin{equation}
 \centering
-\dfrac{\partial^2\delta}{\partial t^2} + \dfrac{2\dot{a}}{a} \dfrac{\partial\delta}{\partial t}
- - \dfrac{3H_0^2 \Omega_m}{2a^3} \delta = 0
+\dfrac{\partial^2\delta}{\partial t^2} + \dfrac{2\dot{a}}{a} 
+		\dfrac{\partial\delta}{\partial t}
+		- \dfrac{3H_0^2 \Omega_m}{2a^3} \delta = 0
+\end{equation}
+\\
+This equation is fair approximation at large scales, where the perturbations
+are small and completely describe the distribution and evolution of perturbations. 
+The equation resembles a harmonic oscillator with damping
+term govern by the Hubble parameter. The solution to this equation can be 
+separated in spatial and temporal part, where the temporal part gives the 
+growth of the structures, $D_+(t)$, and therefore,
+
+\begin{equation}
+	\dfrac{\partial^2 D_+(t)}{\partial t^2} + 2 H(t)
+		\dfrac{\partial D_+(t)}{\partial t}
+		- \dfrac{3H_0^2 \Omega_m}{2a^3} D_+(t) = 0
+\end{equation}
+\\
+$D_+(t)$ is also known as the growth factor. It describes the evolution of the
+density fluctuations with cosmic time. But to model the density fluctuation 
+at any time, we need to describe the initial condition. It is not possible
+to predict/describe the fluctuation at any given spatial coordinate in space,
+however, it is more wise to study it statistically and describe the statistical
+properties of the density field. 
+
+The simplest of the statistics is the two-point function. Suppose there is a 
+completely random distribution of galaxies in the Universe without any deterministic 
+force. Now, if we ask what is the probability of finding a galaxy close to another
+galaxy at a distance $r_1$ and at another distance $r_2$, it must be the same. 
+However, due to Gravitational force, due to which galaxies attracts each other, 
+there is this excess probability to find a galaxy closer to another galaxy than
+further. So say, the probablity of finding another galaxy at $r_1$ is larger than
+at $r_2$ if $r1<r_2$.
+
+This excess probability can be modelled as the two-point correlation function $C(x,y)$ and define as, 
+\begin{equation}
+	\langle \delta(x) \delta^{\star}(y) \rangle = C(|x-y|)
+\end{equation}
+\\
+The two-point correlation function (2PCF) is only the function of the distance
+separation between two points in the space. It is more convenient to work in 
+Fourier space and hence we define the Fourier transform of the 2PCF as the 
+power spectrum ($P(k)$) of the density field,
+
+\begin{equation}
+		\langle \tilde{\delta}(k) \tilde{\delta}^{\star}(k^{\prime}) \rangle = 
+				(2\pi)^3 \delta_D(k-k^{\prime}) P(k)
+\end{equation}
+\\
+$k$ is the wavevector at the corressponding scale. So, once we define the initial
+power spectrum, along with the growth factor $D_+(t)$, we have a complete description
+of the density field. Assuming the initial density field as a realization of Gaussian
+random field, the task is not that complicated. This assumption lead to a simplified
+expression for the linear power spectrum,
+
+\begin{equation}
+	P_{\rm Lin}(k) = A k^{n_s} T^2(k)
+\end{equation}
+\\
+where, $n_s$ is known as the spectral index of the density field and $A$ is the
+normalisation factor. $T(k)$ is known as the transfer function and describes
+the scale weighting when the perturbation at those scales enters the horizon
+and becomes important. 
+
+So, as we already know that the evolution of linear perturbation grows 
+proportional to the growth factor, we can thus write,
+
+\begin{equation}
+	P_{\rm Lin}(k,t) = P_{\rm Lin}(k) D_+(t)
 \end{equation}
 
-Random fields, power spectrum and two point statistics.
+The shape of the linear power spectrum is determined by the parameter $n_s$ and 
+transfer function, however, there is a different form of normalisation in 
+practice such that if one counts galaxies in sphere of radius 8 $Mpc/h$, then
+the average relative error is close to unity. 
+
+So, we define the variance of the smoothed density field as,
+
+\begin{equation}
+	\sigma^2(R) = \int \dfrac{d^3k}{(2\pi)^3} |\tilde{W}(k,R)|^2 P(k)
+\end{equation}
+\\
+where, $\tilde{W}(k,R)$ is the Fourier transform of the tophat function smoothed 
+at scale $R$ and given by,
+
+\begin{equation}
+	\tilde{W}(k,R) = 3\dfrac{\sin(kR) - kR \cos(kR)}{(kR)^3}
+\end{equation}
+\\
+and therefore we have,
+
+\begin{equation}
+	\sigma^2(8 Mpc/h) \equiv \sigma_8^2 \approx 1
+\end{equation}
+\\
+$\sigma_8$ is the parametrisation in practice to normalize the power
+spectrum. 
+
+\subsection{Zeldovich approximation}
+
+In Lagrangian perturbation theory (LPT) \cite{} at large scales where matter is
+well approximated as fluid, one can write the position each element of the fluid as
+\begin{equation}
+	x(q,t) = q + \Psi(q,t)
+\end{equation}
+\\
+where, $q$ is the initial position of the element and $\Psi(q,t)$ is the Lagrangian
+displacement field. $q$ and $\Psi(q,t)$ together completely describe the motion
+of the cosmological fluid at any time. In LPT, one can try to find the solution 
+perturbatively,
+
+\begin{equation}
+	\Psi(q,t) = \Psi^{(1)}(q,t)+\Psi^{(2)}(q,t)+\Psi^{(3)}(q,t)+\dots
+\end{equation}
+
+The first order solution ($\Psi^{(1)}(q,t)$) is the Zeldovich approximation (ZA). It
+is an intuitive way to understand the filamentary structures in the cosmic web 
+and understanding of non-linear structure formation. As only first order term
+is considered in LPT, the approach is quasi-linear in nature.
+
+There are particularly two advantages of using ZA instead of linear theory:
+
+\begin{itemize}
+	\item First, it is easy to include the redshift space distortions in this formalism,
+	\item Second, Even though ZA is in a sense linear, it provides non-linear smearing
+	to the BAO feature to the amount that matches the simulations very well. 
+\end{itemize}
+
+The Zeldovich power spectrum is given by (see e.g. \cite{})
+\begin{align}
+(2\pi)^3&\delta^D (k)+P(k)=\int d^3 q ~e^{-i\VEC{q}\cdot\VEC{k}}\nonumber\\
+&\times\exp\left[-\frac{1}{2}k_ik_jA_{ij}(\VEC{q}))\right],
+\label{eq:PSwithAW}
+\end{align}
+where 
+\begin{equation}
+A_{ij}(\VEC{q})=X(q)\delta^K_{ij}+Y(q)\hat{q}_i\hat{q}_j,
+\end{equation}
+and
+\begin{align}
+  X(q) =& \int_0^\infty \frac{dk}{2\pi^2} P_L(k)
+  \left[\frac{2}{3} - 2 \frac{j_1(kq)}{kq}\right] , \\
+  Y(q) =& \int_0^\infty \frac{dk}{2\pi^2} P_L(k)
+  \left[-2 j_0(kq) + 6 \frac{j_1(kq)}{kq}\right] .
+  \label{eq:XYex}
+\end{align}
+Here $P_L(k)$ is the linear power spectrum and $j_n$ is the spherical Bessel function of order $n$. 
+
 %----------------------------------------------
 \subsection{Non-Linear theory}
-\subsubsection{Spherical collapse model}
-\subsubsection{The halo model}
+
+At late times or at small scales, the approximation $\delta << 1$ breaks. So, the analytical
+description becomes difficult/impossible for the structure formation. The solution then would 
+be to rely on simulations, higher order perturbation theory, physical approximations to the
+distribution of the matter in the Universe or semi-analytic approaches. Analogous to these
+approaches, there are various estimators for the power spectrum of the matter density field,
+here we discuss two of them: N-body simulations (Numerical solution) and the halo model (
+Analytic approximatoin).
+
 \subsubsection{N-body simualtions}
+
+With the advancement in the compuatational power in the last decade, it is now possible to
+simulate the Universe at cosmological volumes to high accuracy up to the scales where
+only gravity is important in structure formation. These scales are highly non-linear and
+very difficult to describe by higher order perturbation theories etc. 
+
+\subsubsection{The halo model}
+
+The halo model is one of the more successful analytic and physical framework to describe
+the clustering and growth of structures in the Universe. In this framework, all the matter
+in the Universe is assumed to be in the form of spherical halos whose radius are defined by a 
+density threshold, usually uses as the 200 times the mean matter density of the Universe 
+(e.g., $R_{200}$). The  distribution of halos are assumed to follow a radial density 
+profile, which depends on the mass of the halos, truncated at $R_{200}$ or at virial 
+radius ($R_{\rm vir}$).
+
+The assumptions of the halo model are invalid in details but are well approximated and 
+hence the estimators for the matter power spectrum are well approximately in agreement
+to the more accurate simulations. However, due to these invalid approximations, it is not
+possible to achieve higher accuracy, like sub-percent, with this estimator. 
+
+
+
 \subsubsection{Dark-matter models}
 \subsubsection{Covariance matrix of matter power spectrum}
 %----------------------------------------------
-\subsection{Baryonic contributions}
 %----------------------------------------------
+\subsection{Baryonic contributions}
+
+%----------------------------------------------
+\clearpage
 \section{Probes of Cosmology}
 
 Starting general ideas and all possible probes of cosmology with preferences.
@@ -119,11 +390,13 @@ Starting general ideas and all possible probes of cosmology with preferences.
 %----------------------------------------------
 \subsubsection{Other Lensing Observables}
 
+\clearpage
 \section{Statistics}
 \subsection{Bayesian world}
 \subsection{MCMC and Fisher}
 \subsection{Genetic algorithm}
 
+\clearpage
 \section{Motivation}
 
 Here I would like to give a comprehensive summary of this work.

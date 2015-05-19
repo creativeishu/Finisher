@@ -2,11 +2,7 @@ FILENAME = thesis
 BIBFILENAME = tail/tbib
 .PHONY = clean
 
-$(FILENAME).pdf: $(FILENAME).dvi
-#	dvipdfm $(FILENAME)
-	open $(FILENAME).pdf
-
-$(FILENAME).dvi: $(FILENAME).tex $(BIBFILENAME).bib
+$(FILENAME).pdf: $(FILENAME).tex $(BIBFILENAME).bib */*tex
 	pdflatex $(FILENAME)
 	bibtex $(FILENAME)
 	pdflatex $(FILENAME)
