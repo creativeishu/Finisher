@@ -41,7 +41,8 @@ derives the Friedmann equations:
 \end{equation}
 \\
 where, $\rho$ and $p$ are the density and pressure of the corressponding component of
-the energy density of the Universe, $a$ is the scale factor normalised to unity at present ($a_0=1$).
+the energy density of the Universe, $a$ is the scale factor for the size of the expanding
+Universe normalised to unity at present ($a_0=1$).
 $K$ is the curvature parameter and follows $K=0$ for a flat Universe. $G$ and $c$ are
 the Gravitation constant and speed of light respectively. Related by equation \ref{eqn:fe1} 
 and \ref{eqn:fe2}, the dynamics and expansion of the Universe depend on its contents. 
@@ -97,6 +98,9 @@ Where, we define the expansion rate of the Universe as:
 \begin{equation}
 	H(t) \equiv \dfrac{\dot{a}}{a}; H_0 \equiv H(t=0) = \dot{a}(t_0)
 \end{equation}
+\\
+where, $H_0$ is the Hubble parameter today or also referred as Hubble constant. In 
+practice it is parameterized as $h$ in units of 100 km/s/Mpc.
 
 The critical density $\rho_{cr}$ is a characteristic density of the Universe and is
 used to scale the densities of various components as,
@@ -132,6 +136,75 @@ and therefore,
 \begin{equation}
 	t(a) = \int_0^a \dfrac{da^{\prime}}{a^{\prime}H(a^{\prime})}.
 \end{equation}
+\\
+This equation gives the age of the Universe when its size was
+scaled to the scale factor $a$ with respect to the present. Hence, both $t$ and
+$a$ defines the epoch in the cosmic history of the Universe.
+
+%-----------------------------------------------
+\subsection{Cosmological redshift}
+
+Consider a source at time $t$ in the cosmic history emitting light reaching us today. 
+Due to the expansion of the Universe, the wavelength of the light observed 
+($\lambda_{\rm obs}$) will be different (stretched or redshifted) from the 
+wavelength at which it was emitted ($\lambda_{\rm emit}$) by a factor by which
+the Universe is expanded during the travel time of the photons, i.e.,
+\begin{equation}
+	(1+z) \equiv \dfrac{\lambda_{\rm obs}}{\lambda_{\rm emit}} = \dfrac{a_{\rm obs}}{a_{\rm emit}}
+\end{equation}
+\\
+and as conventionally we define $a_{\rm obs} = a_{\rm today} = 1$, we have,
+\begin{equation}
+	(1+z) = \dfrac{1}{a(t)}
+\end{equation}
+\\
+where, $z$ is known as the cosmological redshift of the source and also describe
+the epoch in the cosmic history of the Universe. Therefore, the terms scale factor 
+$a$ and redshift $z$ and cosmic time $t$ will be used interchangeably 
+characterizing the epoch in the cosmic history of the Universe. 
+
+
+%-----------------------------------------------
+\subsection{Cosmological distances}
+As the Universe is expanding with cosmic time, the notion of distance to a source
+is not strict and characterizes conceptually. So if we go in the frame of reference
+which is expanding with the Universe, or the so-called comoving coordinates, we can
+define a comoving distance ($\chi$) as the distance to the radial coordinate of a source in
+an expanding Universe,
+
+\begin{equation}
+	-\mathrm{d}\chi(a) = \dfrac{c\mathrm{d}t}{a} = 
+	\dfrac{c\mathrm{d}a}{a \dot{a}} = \dfrac{c\mathrm{d}a}{a^2 H(a)}
+\end{equation}
+\\
+or,
+\begin{equation}
+	\mathrm{d}\chi(z) = \dfrac{\mathrm{d}z}{H(z)} 
+	\Rightarrow \chi(z) = \int_0^z \dfrac{\mathrm{d}z}{H(z)}
+\end{equation}
+\\
+$\chi(z)$ is the radial comoving distance to redshift $z$. 
+
+Suppose one knows the size ($d$) of a source at redshift $z$ and hence measure its
+distance by measuring the angle subtending to the observer ($\theta$), this distance is referred
+to as angular diameter distance and define as,
+\begin{equation}
+	D_{\rm ang}(z) = \dfrac{d}{\theta} = a(z)\chi = \dfrac{\chi}{1+z}
+\end{equation}
+\\
+the multiplicative factor $a(z)$ is due to the fact that the Universe was smaller by 
+a factor of $a$ when the light was emitted. 
+
+Similarly, if one measure the flux ($S$) from a source and model its luminosity ($L$), it is
+possible to infer the distance to the source referred as Luminosity distance and 
+given by,
+\begin{equation}
+	D_{\rm lum}(z) = \sqrt{\dfrac{L}{4\pi S}} = \dfrac{\chi}{a(z)} = (1+z)\chi
+\end{equation}
+\\
+the multiplicative factor of ($1/a(z)$) is due to the redshifted photons during the
+expansion of the Universe.
+
 
 %------------------------------------------------------------------------------
 \clearpage
@@ -253,7 +326,7 @@ So, as we already know that the evolution of linear perturbation grows
 proportional to the growth factor, we can thus write,
 
 \begin{equation}
-	P_{\rm Lin}(k,t) = P_{\rm Lin}(k) D_+(t)
+	P_{\rm Lin}(k,z) = P_{\rm Lin}(k) D_+(z)
 \end{equation}
 
 The shape of the linear power spectrum is determined by the parameter $n_s$ and 
@@ -346,10 +419,39 @@ Analytic approximatoin).
 
 \subsubsection{N-body simualtions}
 
-With the advancement in the compuatational power in the last decade, it is now possible to
+With advancement in the compuatational power in the last decade, it is now possible to
 simulate the Universe at cosmological volumes to high accuracy up to the scales where
 only gravity is important in structure formation. These scales are highly non-linear and
-very difficult to describe by higher order perturbation theories etc. 
+very difficult to describe by higher order perturbation theories etc. An N-body simulation
+characterizes to simulate a Universe consists of only dark-matter (and no baryons) that 
+interacts only gravitationally. Such a simulation is useful in studying the
+structure formation at scales large enough that baryonic processes are not 
+important and small enough that the clustering processes are non-linear and difficult
+to describe analytically. 
+
+It is not possible (or at least very expensive) to simulate a volume equivalent to the
+observable Universe, but only a part of it. Assuming that the Universe is homogeneous
+at cosmological scales (or the scales of the largest structures BAO), the simulation
+volume must at least include these structures. So a cube with side length nearly 200 Mpc/h
+is needed to simulate a true representative of the Universe. Larger volumes are needed
+for various other purposes, e.g., covariance matrix (to be discussed in section \ref{}).
+
+One very important ingredient of a simulation is the initial conditions which are
+set to very high redshift and let the particles evolve with gravity up to redshift zero. 
+The best way to set the initial condition is to put all the particles in a uniform 3D grid
+and then displace each particle with a displacement field to match the initial power 
+spectrum (linear). 
+
+Another important aspect of a simulation is its resolution. This depends on the number 
+particles or the mass of each dark-matter particle (at least one of them is free parameter 
+to fix at the beginning). Smaller is the mass of the individual dark-matter particle, 
+larger will be the total number of particles in order to match the critical density of 
+the Universe today and therefore, one can resolve smaller scale structures. However, 
+there is always a trade-off between large volumes and higher resolutions. 
+
+Some examples of top simulations here...Emulator, Skillman, Aurel's simulations etc. 
+
+
 
 \subsubsection{The halo model}
 
@@ -362,40 +464,210 @@ profile, which depends on the mass of the halos, truncated at $R_{200}$ or at vi
 radius ($R_{\rm vir}$).
 
 The assumptions of the halo model are invalid in details but are well approximated and 
-hence the estimators for the matter power spectrum are well approximately in agreement
+hence the estimators for the matter power spectrum are well in agreement 
+(nearly 20$\%$ at non-linear scales)
 to the more accurate simulations. However, due to these invalid approximations, it is not
 possible to achieve higher accuracy, like sub-percent, with this estimator. 
 
+There are particularly four ingredients to model the power spectrum in halo model framework:
 
+\begin{itemize}
+	\item Linear power spectrum.
 
-\subsubsection{Dark-matter models}
-\subsubsection{Covariance matrix of matter power spectrum}
-%----------------------------------------------
-%----------------------------------------------
+	\item Radial density profile of the halos. Usually for dark-matter only Universe, the so-called
+			Navarro-Frenk-White (NFW) is used as a Universal profile completely characterized by the
+			mass (or concentration) of the halo,
+			\begin{equation}
+				\rho(r) = \dfrac{\rho_s}{(r/r_s)(1+r/r_s)^2}
+			\end{equation}
+			\\
+			where, $r_s$ and $\rho_s$ are the scale radius and characteristic density at scale radius
+			respectively. Here we define the concentration parameter of the halo as,
+
+	\item Mass function ($f(M)$): a functional form defining the number of halos as a function of halo
+			mass. 
+
+	\item Halo bias: As the halos are biased tracers of the matter, one important ingredient is 
+			the description of the bias.  
+\end{itemize}
+
+Once we know these four ingredients, it is very straightforward to model the power spectrum. For 
+more details see chapter \ref{}
+
 \subsection{Baryonic contributions}
+It is relatively easy to model and describe the clustering of matter that interacts with only 
+one force (gravity) aka dark-matter. But we exist and not made up of dark-matter, instead by the
+ordinary matter we know as baryons which interacts other than gravity too and exhibit pressure. 
+Even the Universe with baryons and dark-matter would behave very similar at large scales,
+but at small scales where the baryonic processes are important, dark-matter only Universe is
+not a good description. 
 
-%----------------------------------------------
+To model the structure formation with baryons, is rather a messy task. Analytic calculations
+can be very complicated and not-reliable. However, simulations are better ways. One can always
+put baryonic matter along with dark matter in the simulations and evolve governing gravity and
+baryonic processes which are known to be important. Some of the processes are described below,
+
+\begin{itemize}
+	\item Star formation
+	\item Feedback processes
+	\item Radiative transfer
+	\item Adiabatic contraction/expansion
+\end{itemize}
+
+When there is very little understanding of start formation processes, other processes can be 
+modelled with some approximations. But carrying out these calculations in big cosmological 
+volumes are very expensive and may still be out of the reach to the current computational 
+abilities. 
+
+The other way is to include the baryonic processes is to perturb the density profile 
+of the halos with baryonic processes and model with the halo model. This approach can 
+be calibrated with simulations or observations but still remain analytical with some 
+free parameters to be measured by data directly. For a similar approach see chapter \ref{}
+
+
+
+\subsection{Covariance matrix of matter power spectrum}
+As the 2PCF and power spectrum are statistical quantities, there is a statistical limit
+to which it can be measured in cosmological surveys or simulations. This limit is expressed
+as the covariance matrix. 
+
+The full covariance matrix of the matter power spectrum consist of three broad parts:
+
+\begin{itemize}
+	\item Gaussian part:
+	\item Non-Gaussian part:
+	\item Super-sample variance: 
+\end{itemize}
+
+
+
+
+
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \clearpage
 \section{Probes of Cosmology}
 
 Starting general ideas and all possible probes of cosmology with preferences.
+\begin{itemize}
+	\item CMB
+	\item BAO
+	\item Supernovae-Ia
+	\item Galaxy cluster
+	\item Sunyaev Zeldovich effect
+	\item Lyman alpha forest
+	\item 21cm cosmology
+	\item Redshift space distortions
+	\item Gravitational lensing
+\end{itemize}
+
 
 %------------------------------------------------------------------------------
 
 \subsection{Gravitational Lensing}
+The bending of light from a distant source due to the gravitational field of the
+intervening matter is known as
+the gravitational lensing (or lensing henceforth). It is a powerful technique to 
+obtain information about the intervening matter (or the lens from now). There are
+various observables due to this phenomenon like multiple-images of the source, time 
+delays amongst the multiple-images, shape distortion of the source, change in brightness
+of the source etc. Each of these observables can be utilised to infer or model various
+aspects: from the mass distribution of the lens to cosmology. As lensing phenomenon depends 
+on the total mass of the lens and not on its nature (dark-matter or baryonic), it is
+so far the most unbiased technique to probe the distribution of matter in the Universe
+and to do cosmolgoy.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/lens_geometry.png}
+	\caption{}
+	\label{fig:lens}
+\end{figure}
+
+Consider figure \ref{fig:lens}: a ray of light from a source, at a distance $D_s$ from
+the observer, deflected due to the lens, at a distance $D_d$ from the observer,  by an 
+angle $\hat{\alpha}$ and seen
+by the observer at an angle $\theta$ from the lens. If there were no lens, it would have
+been observed at $\beta$. Employing small angles approximations, 
+
+\begin{equation}
+	\beta  = \theta  - \dfrac{D_{ds}}{D_s} \hat{\alpha}(\xi) \equiv \theta - \alpha(\xi)
+	\label{eqn:lens}
+\end{equation}
+\\
+where, $\alpha$ is the scaled deflection angle with respect to the center of the 
+lens to the observed position of the source image and $\xi$ is the impact parameter
+of the image on the lensplane. The equation \ref{eqn:lens} is known
+as the lens equation. The equation describes the true position of the source at $\beta$ to
+be seen at $\theta$ due to the lens which is deflecting the light rays by an angle $\alpha$.
+If this equation has more than one solution, there will be multiple images of the source. 
+
+The deflection angle $\hat{\alpha}$ depends on the impact parameter as well as the 
+mass/density distribution of the lens. For a spherically symmetric lens, general relativity
+predicts,
+\begin{equation}
+	\hat{\alpha} = \dfrac{4GM}{c^2 \xi}
+\end{equation}
+\\
+which is twice the value predicted by Newtonian gravity. For more complex lenses, the 
+relation between the deflection angle, impact parameter (or $\theta$) and the mass
+distribution of the lens can be obtained under the so-called geometrically thin lens
+approximation as,
+
+\begin{equation}
+	\alpha(\theta) = \dfrac{1}{\pi} \int d^2\theta^{\prime}
+						\kappa(\theta^{\prime})
+						\dfrac{\theta-\theta^{\prime}}{|\theta-\theta^{\prime}|^2}
+\end{equation}
+\\
+where, $\kappa(\theta)$ is the surface mass density in the units of a critical 
+density $\Sigma_{\rm cr}$ defined as,
+
+\begin{equation}
+	\kappa(\theta) \equiv \dfrac{\Sigma(\theta)}{\Sigma_{\rm cr}}; 
+	\Sigma_{\rm cr} = \dfrac{c^2}{4\pi G} \dfrac{D_s}{D_d D_{ds}}.
+\end{equation}
+
+The critical density completely depends on the geometry of the system. For generating
+multiple images, $\kappa>1$ and hence the critical density is a characteristic 
+surface mass density in order to produce extra images for some values of $\theta$.
+Therefore, critical density is also characteristic to differentiate between region
+of strong and weak lensing, which are described in more details below.
+
 %----------------------------------------------
 \subsubsection{Strong Gravitational Lensing}
+
+
+
+
 %----------------------------------------------
 \subsubsection{Weak Gravitational Lensing}
 %----------------------------------------------
-\subsubsection{Other Lensing Observables}
+\subsubsection{Microlensing}
 
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \clearpage
-\section{Statistics}
-\subsection{Bayesian world}
+\section{Essential statistics for cosmology}
+There are two broad schools in statistics Frequentist and Bayesian. Frequentists believe
+that parameters are all fixed and unknown constants in the model whereas Bayesians
+believe that parameters are random variables that has a given distribution, and other probability
+statements can be made about them. According to Frequentists, there are TRUE
+population parameters that are unknown and can only be estimated by the data whereas,
+Bayesians believe that only data are real; the population parameters are an abstraction, and
+as such some values are more believable than others based on the data and on prior beliefs.
+In other words, Bayesian defines the probability as the degree of belief where Frequentists
+termed it as frequency of occurrence in a set of trials. 
+
+\subsection{Statistical Inference}
+
+
+
 \subsection{MCMC and Fisher}
 \subsection{Genetic algorithm}
 
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \clearpage
 \section{Motivation}
 
@@ -405,7 +677,7 @@ Here I would like to give a comprehensive summary of this work.
 \subsection{What are we trying to achieve}
 \subsection{A unified picture}
 
-
+%------------------------------------------------------------------------------
 
 \clearpage
 \cite{2014MNRAS.440.2290M}
