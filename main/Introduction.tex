@@ -533,11 +533,60 @@ as the covariance matrix.
 
 The full covariance matrix of the matter power spectrum consist of three broad parts:
 
+\begin{equation}
+	C(k,k^{\prime}) = C^{G}(k,k^{\prime}) + C^{NG}(k,k^{\prime}) + C^{SSC}(k,k^{\prime})
+\end{equation}
+\\
+where, the three terms on the right are the Gaussian, Non-Gaussian and super-sample covariance contributions. 
+
 \begin{itemize}
-	\item Gaussian part:
-	\item Non-Gaussian part:
-	\item Super-sample variance: 
+	\item Gaussian part $C^{G}(k,k^{\prime})$: The matter power spectrum is computed
+			by averaging over the modes in spherical shells in the Fourier space. It 
+			is understood that if one average over more number of modes, the underlying
+			error on the average will be smaller and vice-versa. So, the Gaussian part
+			of the covariance matrix gives this contribution and hence have Poissonian
+			structure. 
+			\begin{equation}
+				C^{G}(k,k^{\prime}) = \dfrac{2}{N(k)} \delta_{k,k^{\prime}} P^2(k)
+			\end{equation}
+			\\
+			where, $N(k)$ is the number of modes corressponding the wavevector $k$. One 
+			can either count the number of modes while averaging over the power spectrum
+			or can compute as,
+			\begin{equation}
+				N(k) = 4 \pi k^2 dk \left( \dfrac{L}{2\pi} \right)^3
+			\end{equation}
+			\\
+			where, $L$ is the box size and $dk$ is the bin width. The Gaussian part 
+			contributes only to the Gaussian part of the covariance and gives no 
+			information about the correlated errors between different modes. 
+
+	\item Non-Gaussian part, $C^{NG}(k,k^{\prime})$: The non-Gaussian covariance term is 
+			is induced by the non-linearity and arising from the connected 4-point function or the trispectrum. This term gives the correlated errors between
+			different wavevectors and also contributes to the off-diagonal terms
+			of the covariance matrix. 
+
+	\item Super-sample covariance (SSC), $C^{SSC}(k,k^{\prime})$: The SSC is the sampling
+			error due to the coupling to the modes larger than the size of the survey or
+			simulation. Because this contribution appear constant as the survey scale, it 
+			can be viewed as a curvature term to the survey which can further be mimic
+			by the change in background density. Therefore this term can be modelled
+			completely by the response of the change in background density to the
+			matter power spectrum,
+			\begin{equation}
+				C^{SSC}(k,k^{\prime}) = \sigma_b^2 \dfrac{\partial P(k)}{\partial \delta_b}
+										\dfrac{\partial P(k^{\prime})}{\partial \delta_b}
+			\end{equation}
+			\\
+			where, $\sigma_b$ is the linear variance. 
 \end{itemize}
+
+The accurate quantification of all these terms is crucial in order to perform any
+likelihood analysis based on observables modelled on matter power spectrum. As we
+advance in the quality of data, the smaller scales gives more constraining power 
+over cosmological parameter space, the contributions from non-Gaussian part and SSC
+becomes very important and ignoring them may overestimates the constraints on the 
+cosmological parameters or bias and mislead the interpretation. 
 
 
 
@@ -554,9 +603,6 @@ Starting general ideas and all possible probes of cosmology with preferences.
 	\item BAO
 	\item Supernovae-Ia
 	\item Galaxy cluster
-	\item Sunyaev Zeldovich effect
-	\item Lyman alpha forest
-	\item 21cm cosmology
 	\item Redshift space distortions
 	\item Gravitational lensing
 \end{itemize}
@@ -618,10 +664,11 @@ approximation as,
 	\alpha(\theta) = \dfrac{1}{\pi} \int d^2\theta^{\prime}
 						\kappa(\theta^{\prime})
 						\dfrac{\theta-\theta^{\prime}}{|\theta-\theta^{\prime}|^2}
+	\label{eqn:alpha}
 \end{equation}
 \\
-where, $\kappa(\theta)$ is the surface mass density in the units of a critical 
-density $\Sigma_{\rm cr}$ defined as,
+where, $\kappa(\theta)$ (or the convergence) is the surface mass density in the 
+units of a critical density $\Sigma_{\rm cr}$ defined as,
 
 \begin{equation}
 	\kappa(\theta) \equiv \dfrac{\Sigma(\theta)}{\Sigma_{\rm cr}}; 
@@ -630,20 +677,97 @@ density $\Sigma_{\rm cr}$ defined as,
 
 The critical density completely depends on the geometry of the system. For generating
 multiple images, $\kappa>1$ and hence the critical density is a characteristic 
-surface mass density in order to produce extra images for some values of $\theta$.
-Therefore, critical density is also characteristic to differentiate between region
-of strong and weak lensing, which are described in more details below.
+surface mass density in order to produce extra images given a source in the background.
+Therefore, critical density is also differentiate between region
+of, so-called, strong and weak lensing, which are described in more details below.
 
 %----------------------------------------------
 \subsubsection{Strong Gravitational Lensing}
 
+Strong gravitational lensing (or SL henceforth), referred to the lensing phenomenon
+when the strength of the gravitational field of the lens is sufficiently strong and 
+also the alignment between the source, the lens and the observer is optimal enough to
+produce multiple images of the source. From equation \ref{eqn:alpha}, SL regime marked
+by $\kappa >1$ and relatively small values of $\theta$. So, the multiple images of a
+background sources contains information about the projected mass distribution of the lens. 
 
+Given the mass distribution of a lens ($\kappa(\theta)$) and position of the source,
+it is straightforward to find out the position of the multiple images, this process
+is called forward modelling. But given a set of multiple images, which are the main 
+observables in SL, it is a highly degenerate process to reconstruct the mass
+distribution of the lens. The procedure is referred as lens inversion. There are 
+several methods for lens inversion. Many of those procedures put strong constraints
+on the mass distribution of the lens and assume a functional form and hence are called
+as parametric methods. These methods mainly involve to find the optimal values 
+of the free parameters of the functional form of the mass distribution of the lens. 
+For example \cite{}, \cite{},\cite{}.
+
+There are some methods which invert the lens with minimal assumptions and without
+assuming any prior form of the mass distribution of the lens, and are referred as
+non-parametric methods. In these methods, the number of free parameters are often
+too large, usually some building block of the total mass maps, and hence larger
+statistical consideration is needed. For example, \cite{}, \cite{}.
+
+Where parametric models are more efficient, non-parametric models are more
+accurate and unbiased. In this work we used a non-parametric lens inversion
+library called as GRALE \cite{} to trace the mass distribution of some very massive
+galaxy clusters. The building blocks of the mass map are the Plummer spheres, where
+other choices such as squares and Gaussian spheres are also available in the library, 
+and the total mass map is the super position of these building blocks. GRALE uses
+a genetic algorithm to find optimal solution to the weights of the building 
+blocks and the resolution of the mass maps is adaptively increased (or decreased)
+For more detailed documentation see \cite{}.
+
+Another observable in SL is the time delays between multiple images
+of the source. The light rays from the same source travel different directions
+and due to the curvature of space time, depending upon the mass distribution 
+of the lens, they travel different distances before they reach the same 
+observer. And because the distances in cosmology depends on the Hubble constant
+or the expansion rate of the Universe, one can calculate the value of the
+Hubble constant given measured time delays and mass distribution of the source. 
+However, it is also possible to have the Hubble constant given and put
+additional constraints on the mass distribution of the lens using measured
+time delays. 
 
 
 %----------------------------------------------
 \subsubsection{Weak Gravitational Lensing}
+
+Weak gravitational lensing (or WL henceforth) referred to the phenomenon when 
+the lensing is not strong enough to produce multiple images but strong enough
+to distort the shape of the source. The deformation of the shape of the observed galaxies
+due to the intervening matter is referred to as cosmic shear. This
+signal is very small, nearly 1-2$\%$ of the intrinsic ellipticity of the source 
+and can only be measured statistically under the assumption that the intrinsic 
+ellipticity of the background galaxies do not have a preferred direction. If one 
+measures the cosmic shear of all background sources behind a lens or mass concentration,
+it tends to align towards the centre of the mass concentration. Hence, the shear
+two point correlation function can be directly related to that of the convergence
+or the projected density,
+
+\begin{equation}
+	P_{\kappa}(\ell) = \int_0^{\chi_H} \dfrac{g(\chi)^2}{\chi^2} P(\dfrac{\ell}{\chi},\chi) d\chi
+\end{equation}
+\\
+where,
+$\chi$ is the comoving distance to the source and $\chi_{H}$ is the comoving distance to the
+horizon. $\ell$, defined as $\ell = 180/\theta$, is the multipole and give the angle in the sky. 
+$\g(\chi)$ is the lensing weight given by,
+
+\begin{equation}
+	g(\chi) = \dfrac{3\Omega_m}{2H_0^2} \dfrac{\chi}{a(\chi)\bar{n}} \int_{\chi}^{\chi_(H)}
+					n(\chi^{\prime}) \dfrac{\chi(\chi^{\prime}-\chi)}{\chi^{\prime}}d\chi^{\prime}
+\end{equation}
+\\
+where, $n(\chi)$ gives the distribution of sources as a function of comoving distance or redshift.
+This can be fixed for a given survey and expected lensing weights can be computed. Which then
+be convolved the the matter power spectrum and projected along the line of sight in order
+to model the power spectrum of the projected mass density or the convergence. 
+
 %----------------------------------------------
 \subsubsection{Microlensing}
+
+
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
@@ -671,11 +795,140 @@ termed it as frequency of occurrence in a set of trials.
 \clearpage
 \section{Motivation}
 
-Here I would like to give a comprehensive summary of this work.
+The theory of structure formation is partially understood --  at large scales 
+or at early times when the perturbations were tiny or only linear order is important. 
+However, for small scale clustering processes, when the higher order in perturbations 
+become important the analytic solutions are not possible, we rely on simulations and 
+approximations. 
+
+The main motivation of this work is to model the distribution of matter in high mass
+haloes like lensing clusters and in the Universe in general. 
+
+This information is useful in two ways: 
+
+First, the accurate modelling of the matter distribution in individual clusters
+give information about the properties of dark-matter. On large scales, dark-matter
+is known to be collisionless and non-interacting except for its gravitational effects,
+but it is important to quantify and test the hypothesis in high dense regions, like
+at the center of clusters. A small but finite cross section of dark-matter particles
+can be well tested in high dense regions, may have stronger implications in our 
+understanding of the properties of dark-matter and the Universe in general.  
+Also, as the baryonic processes and theory of galaxy
+formation is poorly understood, the central regions of the galaxy clusters can be 
+used as laboratories to study these processes. It can be done only if the matter 
+distribution in the individual systems is well constrained. 
+Further, as in the hierarchical structure formation, many small haloes interacts and
+merge to form large collapsed virialised haloes, the study of the distribution of 
+matter in lensing clusters at high redshift give information about the merging
+history/stage of the cluster. 
+
+The modelling of the distribution of matter in the Universe is very important
+in order to model the cosmological observables. Statistically, the modelling of the
+matter power spectrum or 2PCF is important if one wants to do cosmology because 
+the matter power spectrum underlies many
+cosmological observables like BAO, weak lensing, galaxy clustering, redshift
+space distortions etc. Secondly, the modelling of the 
+covariance matrix of the matter power spectrum is vital in order to do correct
+likelihood analysis and testing cosmological models. Finally baryonic physics 
+also changes the power spectrum at small scales, if neglected, it will add biases
+in the cosmological parameters and mislead the interpretations. 
 
 \subsection{Challenges}
-\subsection{What are we trying to achieve}
+
+There are certain challenges in order to accurately model the mass distribution
+in clusters and in the Universe. 
+
+\begin{itemize}
+	\item Distribution of matter in clusters: Mass is not the observable, what we 
+			observe is the light in different frequency bands. We can derive 
+			redshifts, velocity dispersions etc from this. To relate these observables
+			to mass distributions, we have approximations and various models which
+			are often rich in systematics, i.e., the incomplete understanding, and 
+			biases. Gravitational lensing is far the most unbiased technique in order
+			to trace matter in lenses. However, even in lensing the inversion of the lens,
+			is a highly degenerate process. Often and very much in 
+			practice, people assume that mass follows light, which is a good approximation
+			but may not be true everywhere. So, this is essential that the 
+			mass reconstruction techniques are independent of such assumptions in order
+			to learn about intrinsic properties of the dark-matter and baryonic
+			process in the high dense regions of the lensing clusters.
+
+	\item Modelling matter power spectrum and its covariance matrix: In order to model
+			the matter power spectrum at non-linear scales, simulations are far the 
+			best solution as all other analytic approaches are difficult. But this is limited
+			by the volume and resolution of the simulation. Also a good simulation
+			can be very expensive computationally. So, it is possible to simulate a big
+			volume at very good resolution for a cosmological realization, but in order
+			to carry out a likelihood analysis on some cosmological data, simulations are
+			very expensive and impossible to do. So, we rely on semi-analytic models, 
+			which can model the matter power sepctrum with some function of cosmology
+			and are more accurate than the perturbation theories etc at non-linear 
+			scales. Similarly, in order to get good covariance matrix of the matter power
+			spectrum from simulation, we need to simulate a volume of the order 1000 Gpc/h
+			cube, which again is very expensive specially when small scale modelling 
+			is necessary. 
+
+	\item Modelling baryonic physics in two-point functions: Finally baryonic effects are 
+			important at small scales statistically too. If these effects are not present
+			in the model of the power spectrum, it will bias the whole exercise and
+			the recovered cosmology might be very precise but not accurate. 
+\end{itemize}
+
+So, the main goal of this work is to target these challenges. We perform and completed
+a number of projects in order to achieve these goals. 
+
+
+\subsection{Projects in this work}
+
+In this PhD dissertation, I (along with other collaborators in different projects) tried
+to answer few of these question and build a better understanding of distribution of 
+matter in the Universe and its clustering properties. 
+
+The very first project is a mass modelling problem in strong lensing cluster. Here we
+used a publicly available code GRALE, modified it for an optimum solution and resolution,
+and put tight constraints on the mass distribution of few lensing clusters. By studying
+the mass and light distribution of these clusters, we imply that it is possible 
+that the dark-matter has a finite self-interaction cross section which is large and
+important in central parts of clusters. 
+
+In a similar project, we also show that time delay information is very useful in 
+order to put additional constraints on the central region of the clusters which can't 
+be resolved directly, specially when the steepness degeneracy is broken by the 
+presence of background sources at different redshifts.
+
+We also presented a (semi) analytic model for the matter power spectrum, which is
+computationally inexpensive and compute the power spectrum to a percent level 
+accuracy up to k $\sim$ 1 h/Mpc. The motivation of this model is the halo model
+and we also derived simple form of the covariance matrix. We proposed a way to 
+marginalise over baryonic effects. 
+
+In a similar project to the previous one, we used the halo model in order to directly
+model the effects of baryons on the matter power spectrum and to the extention on the
+weak lensing shear-shear power spectrum. The effects are small at comparatively large
+scales but as the next generation surveys are expected to measure these quantities 
+to very small scales, the baryonic effects are important to take into account. If not, 
+it will add biases to the cosmological parameters up to 10 sigma. 
+
 \subsection{A unified picture}
+
+If we try to draw a bigger picture from all the projects above, it states that
+baryonic physics is very important to model in order to understand the clustering processes,
+galaxy formation as well as to do cosmology with future generation surveys. 
+
+Gravitational lensing is one ideal tool to do so. Strong lensing
+is very useful in studying the individual systems. 
+Weak lensing shear measurements
+on larger area in the sky is the most promising tool to do cosmology under
+control systematics. One of the biggest source of systematics is again the 
+baryonic physics at small scales and there are various ways to handle them. But
+they can't be ignored. Precision cosmology and detailed information about the 
+individual systems are needed in order to gain full understanding of the 
+galaxy formation processes and evolution of the Universe. 
+
+
+
+
+
 
 %------------------------------------------------------------------------------
 
