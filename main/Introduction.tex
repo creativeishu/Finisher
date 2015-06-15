@@ -1094,9 +1094,53 @@ for exoplanets etc, but not discussed in details in this manuscript.
 
 
 
-\subsection{Geometry}
+\subsection{Lensing theory}
+
+Consider a gravitational lens at a redshift $z_L$ with sky-projected surface
+mass density $\Sigma({\mathbf x})$, where ${\mathbf x}$ is a 2D vector to the
+physical coordinate perpendicular to the line of sight. Due to the 
+gravitational field of the lens, different light rays from a background source
+will travel different distances reaching the observer. Therefore, the time delay
+due to different travel distances between two images of the same source can be
+split into two main contributions: First, due to the gravitational potential 
+of the lens and second, due to the geometry of the source, lens and observer. 
+The first contribution, also referred as the gravitational time delay $t_{\rm grav}$,
+due to the lens is,
+\begin{equation}
+	\nabla^2t_{\rm grav} = -(1+z_L) \dfrac{8\pi G}{c^3} \Sigma({\mathbf x})
+	\label{eqn:tgrav}
+\end{equation}
+\\
+whereas the second contribution due to the geometry of the system ($t_{\rm geom}$) 
+is given by,
+\begin{equation}
+	t_{\rm geom} = \dfrac{(1+z_L)}{2c} \dfrac{d_s}{d_L d_{LS}} |{\mathbf x}-{\mathbf x}_s|^2
+\end{equation}
+\\
+where, ${\mathbf x}_s$ is the physical coordinate of the source, $d_s$ is the
+angular diameter distance to the source, $d_L$ is the angular diameter distance
+to the lens and $d_{LS}$ is the angular diameter distance from the lens to the
+source. Note, that $d_{LS} \neq d_S - d_L$ and can be calculated for a source
+at redshift $z_s$ as,
+\begin{equation}
+	d_{z_L,z_s} = \dfrac{c}{H_0(1+z_s)} \int_{z_L}^{z_s} \dfrac{\mathrm{d}z}
+				{\sqrt{\Omega_m(1+z)^3}+\Omega_{\Lambda}}.
+\end{equation}
+
+The total time delay at a sky-coordinate ${\mathbf x}$ for light coming from
+a source at ${\mathbf x}_s$ is the sum of the two contribution,
+\begin{equation}
+	t({\mathbf x,x}_s) = t_{\rm grav}  + t_{\rm geom}.
+\end{equation}
+\\
+$t({\mathbf x,x}_s)$ is a continuous function and can be visualised as contours
+of constant time delays. Images cannot form everywhere, because not every light
+ray reaches the observer, they will form only at coordinates where $t({\mathbf x,x}_s)$
+has a minima, maxima or a saddle point. 
 
 
+%===============================================================================
+\begin{comment}
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/lens_geometry.png}
@@ -1148,7 +1192,7 @@ surface mass density in order to produce extra images given a source in the back
 Therefore, critical density differentiates between region
 of strong and weak lensing, which are described in more details in section \ref{sec:sl}
 and \ref{sec:wl}.
-
+\end{comment}
 
 
 %----------------------------------------------
@@ -1165,7 +1209,17 @@ Given the mass distribution of a lens ($\kappa$) and position of the source,
 it is straightforward to find out the position of the multiple images, this process
 is called {\it forward modelling}. But given a set of multiple images, which are the main 
 observables in SL, it is a highly degenerate process to reconstruct the mass
-distribution of the lens. The procedure is referred as {\it lens inversion}. There are 
+distribution of the lens. The procedure is referred as {\it lens inversion} or
+{\it lens modelling} and mainly consist of reconstructing $\Sigma(\mathbf x)$ and
+${\mathbf x}_s$ (as in equation \ref{eqn:tgrav}). In practice, $\Sigma(\mathbf x)$ 
+is written in units of critical surface mass density $\Sigma_{\rm cr}$ given by,
+\begin{equation}
+	\kappa(\theta) \equiv \dfrac{\Sigma(\theta)}{\Sigma_{\rm cr}}; \quad
+	\Sigma_{\rm cr} = \dfrac{c^2}{4\pi G} \dfrac{d_s}{d_L D_{LS}}.
+\end{equation}
+
+
+There are 
 several methods for lens inversion. Many of those procedures put strong constraints
 on the mass distribution of the lens and assume a functional form and hence are called
 as {\it parametric} methods. These methods mainly involve to find the optimal values 
