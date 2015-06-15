@@ -17,7 +17,10 @@ cold dark-matter (CDM) and only 5$\%$ of the ordinary (baryonic) matter.
 
 \section{An expanding Universe}
 
-Cosmology is an empirical science. The fact that we have only one Universe to observe
+\subsection{Cosmological principle}
+
+Most of the observables in cosmology are statistical in nature. 
+The fact that we have only one Universe to observe
 makes it more interesting but challenging to test the physical laws. Also because
 of finite speed of light, we can only observe the current state of the Universe locally. 
 But this also gives us the ability to look back into the past stages of the Universe. 
@@ -27,7 +30,8 @@ reason, studying the distribution of galaxies is interesting in many other ways 
 The distribution of galaxies clearly indicates that the Universe is highly 
 inhomogeneous around us, but if we go at sufficiently large scales and observe, 
 galaxy distribution is very isotropic. Observation of the CMB also indicates 
-strong isotropy in the Universe. If we combine the isotropic principle with the 
+that the Universe is isotropic up to 1 part in $10^{5}$. 
+If we combine the isotropic principle with the 
 assumption that our place in the Universe is not a special one and another observer
 at another location in the Universe will also see the similar isotropic Universe,
 homogeneity follows. Therefore, we have good reason to assume the isotropy 
@@ -52,7 +56,7 @@ size of the Universe at cosmic time $t$ relative to today. Therefore, just like
 the cosmic time $t$, $a$ also characterises the epoch in the cosmic history.
 $c$ is the speed of light. $\chi$ is the
 radial {\it comoving} coordinate and $\theta\ \& \ \phi$ are the angular coordinate on a
-unit sphere. $f_K(\chi)$ is the comoving angular diameter distance that depends 
+unit sphere. $f_K(\chi)$ relates the distance to the circumference that depends 
 on the curvature parameter $K$ as,
 \begin{equation} \label{eq1}
 \begin{split}
@@ -62,8 +66,37 @@ f_K(\chi) & = K^{-1/2} \sin(K^{1/2}\chi) \quad (K>0) \\
 \end{split}
 \end{equation}
 
-This metric is written in co-moving coordinate as the Universe is expanding and
-therefore the fundamental observers coincides with the comoving observer.
+This metric is written in co-moving coordinate such that the coordinates of the
+observer are expanding with the Universe and therefore, it does not feel any
+acceleration. 
+
+
+
+%-------------------------------------------
+\subsection{Cosmological redshift}
+
+Consider a source at time $t$ in the cosmic history emitting light reaching us today. 
+Due to the expansion of the Universe, the wavelength of the light observed 
+($\lambda_{\rm obs}$) will be different (stretched or redshifted) from the 
+wavelength at which it was emitted ($\lambda_{\rm emit}$) by a factor by which
+the Universe is expanded during the travel time of the photons, i.e.,
+\begin{equation}
+	(1+z) \equiv \dfrac{\lambda_{\rm obs}}{\lambda_{\rm emit}} = \dfrac{a_{\rm obs}}{a_{\rm emit}}
+\end{equation}
+\\
+and as conventionally we define $a_{\rm obs} = a_{\rm t_0} = 1$, we have,
+\begin{equation}
+	(1+z) = \dfrac{1}{a(t)} \Rightarrow \mathrm{d}z = \dfrac{\mathrm{d}a}{a^2}
+\end{equation}
+\\
+where, $z$ is known as the cosmological redshift of the source and also describe
+the epoch in the cosmic history of the Universe just like the scale factor $a$ or 
+the cosmic time $t$. In many texts, the terms scale factor 
+$a$ and redshift $z$ and cosmic time $t$ will be used interchangeably 
+characterizing the epoch in the cosmic history of the Universe. The redshift
+of a source is a very important direct observable and has wide variety of 
+applications while studying cosmology.
+
 
 
 \subsection{Kinematics}
@@ -99,30 +132,6 @@ where we define the Hubble parameter or the expansion rate as,
 Equation \ref{eqn:hubble} is the same as the Hubble law at any cosmic time $t$. 
 
 
-%-------------------------------------------
-\subsection{Cosmological redshift}
-
-Consider a source at time $t$ in the cosmic history emitting light reaching us today. 
-Due to the expansion of the Universe, the wavelength of the light observed 
-($\lambda_{\rm obs}$) will be different (stretched or redshifted) from the 
-wavelength at which it was emitted ($\lambda_{\rm emit}$) by a factor by which
-the Universe is expanded during the travel time of the photons, i.e.,
-\begin{equation}
-	(1+z) \equiv \dfrac{\lambda_{\rm obs}}{\lambda_{\rm emit}} = \dfrac{a_{\rm obs}}{a_{\rm emit}}
-\end{equation}
-\\
-and as conventionally we define $a_{\rm obs} = a_{\rm t_0} = 1$, we have,
-\begin{equation}
-	(1+z) = \dfrac{1}{a(t)}
-\end{equation}
-\\
-where, $z$ is known as the cosmological redshift of the source and also describe
-the epoch in the cosmic history of the Universe just like the scale factor $a$ or 
-the cosmic time $t$. In many texts, the terms scale factor 
-$a$ and redshift $z$ and cosmic time $t$ will be used interchangeably 
-characterizing the epoch in the cosmic history of the Universe. The redshift
-of a source is a very important direct observable and has wide variety of 
-applications while studying cosmology.
 
 
 \subsection{Cosmic time and distances}
@@ -135,11 +144,7 @@ when scale factor was $a(t)$,
 \end{equation}
 \\
 which gives,
-\begin{equation}
-	dt = \dfrac{da}{aH(a)},
-\end{equation}
-\\
-and therefore,
+
 \begin{equation}
 	t(a) = \int_0^a \dfrac{da^{\prime}}{a^{\prime}H(a^{\prime})}.
 \end{equation}
@@ -152,29 +157,18 @@ we define the age of the Universe $t_0$.
 As light rays follows the null geodesics ($\mathrm{d}s^2=0$), using equation 
 \ref{eqn:metric} we have,
 \begin{equation}
-	c^2\mathrm{d}d^2 = a^2\mathrm{d}\chi^2 \Rightarrow c\mathrm{d}t = -a(t)\mathrm{d}\chi
+	c^2\mathrm{d}t^2 = a^2\mathrm{d}\chi^2 \Rightarrow c\mathrm{d}t = -a(t)\mathrm{d}\chi
+	\label{eqn:c2}
 \end{equation}
 \\
 where, the negative sign indicates that we are looking in our backward light cone. 
 Therefore, we can calculate the comoving distance to the source whose photons reach us
-today by integrating this equation,
-\begin{equation}
-	\chi(t) = \int_t^{t_0} = \dfrac{c\mathrm{d}t^{\prime}}{a(t^{\prime})}
-\end{equation}
-\\
-This expression relates the cosmic time to the comoving distance to a source
-that we observe today. The comoving distance to the source can also be 
-related to the scale factor and redshift as,
+today by integrating equation \ref{eqn:c2},
 
 \begin{equation}
 	-\mathrm{d}\chi(a) = \dfrac{c\mathrm{d}t}{a} = 
-	\dfrac{c\mathrm{d}a}{a \dot{a}} = \dfrac{c\mathrm{d}a}{a^2 H(a)}
-\end{equation}
-\\
-or,
-\begin{equation}
-	\mathrm{d}\chi(z) = \dfrac{\mathrm{d}z}{H(z)} 
-	\Rightarrow \chi(z) = \int_0^z \dfrac{\mathrm{d}z}{H(z)}
+	 \dfrac{c\mathrm{d}a}{a^2 H(a)}
+	 \Rightarrow \chi(a) = \int_1^a \dfrac{\mathrm{d}a}{a^2H(a)}
 \end{equation}
 \\
 Therefore, one can use $t$, $a$, $z$ and $\chi$ as variable to characterize the
@@ -189,12 +183,7 @@ to as angular diameter distance and define as,
 \end{equation}
 \\
 the multiplicative factor $a(z)$ is due to the fact that the Universe was smaller by 
-a factor of $a$ when the light was emitted. One example of a structure whose 
-physical size we know is the {\it Baryon Accoustic Oscillation} (BAO) peak. The 
-scale of the BAO peak is nearly $100 h^{-1} \mathrm{Mpc}$ and is considered as
-a {\it standard ruler} in the Universe. It is one of the main cosmological science
-driver in galaxy redshift surveys and a very promising tool to put strong constraints
-on cosmology. For a thorough review see \cite{}.
+a factor of $a$ when the light was emitted. 
 
 Therefore, angular diameter distance 
 resembles the distance to the source that we observe today if the Universe were
@@ -207,8 +196,11 @@ given by,
 	D_{\rm lum}(z) = \sqrt{\dfrac{L}{4\pi S}} = \dfrac{\chi}{a(z)} = (1+z)\chi
 \end{equation}
 \\
-the multiplicative factor of ($1/a(z)$) is due to the redshifted photons during the
-expansion of the Universe.  To measure the luminosity distance to a source, we need to 
+The luminosity scales with $1/a^2$ where one $a$ is the contribution of the redshifted
+photons and the other for the time dilation. Hence, the luminosity distance scales
+as $1/a$
+
+To measure the luminosity distance to a source, we need to 
 knows its intrinsic luminosity and measure its flux. One such objects are the
 Supernovae-Ia which are also known as the {\it standard candles} in the Universe. They
 don't really have same intrinsic luminosity, as the name can be mis-leading, but 
@@ -223,7 +215,6 @@ Brian Schmidt shared a noble prize in physics for this remarkable breakthrough.
 
 
 
-
 \section{The concordance model}
 
 %A stationary Universe would be boring, we have an expanding one - even better its
@@ -234,7 +225,7 @@ Brian Schmidt shared a noble prize in physics for this remarkable breakthrough.
 
 Applying FRW metric (equation \ref{eqn:metric}) to the Einstein's field equations, 
 which relates the Einstein tensor (geometrical object) to the Energy-Momentum tensor, 
-reduces the components of the field equation into two independent dynamical equations
+reduces the components of the field equation into an independent dynamical equations
 for the scale factor $a$,
 
 \begin{equation}
@@ -242,13 +233,6 @@ for the scale factor $a$,
 H^2(a) \equiv \left( \dfrac{\dot{a}}{a} \right)^2 = 
 			\dfrac{8 \pi G}{3} \rho - \dfrac{Kc^2}{a^2},
 \label{eqn:fe1}
-\end{equation}
-
-\begin{equation}
-\centering
-		\left( \dfrac{\ddot{a}}{a} \right) = -\dfrac{4 \pi G}{3} 
-			\left( \rho + \dfrac{3p}{c^2} \right),
-\label{eqn:fe2}
 \end{equation}
 \\
 where, $\rho$ and $p$ are the density and pressure respectively fo the matter content
@@ -271,7 +255,7 @@ One can also relate $\rho$ and $p$ with an {\it equation of state}:
 
 \begin{equation}
 \centering
-p = w \rho,
+w = \dfrac{p}{\rho c^2}
 \label{eqn:eos}
 \end{equation}
 \\
@@ -348,13 +332,25 @@ Finally we can re-write the first Friedmann equation depending on these paramete
 This equation is very important in cosmology and gives the evolution of the 
 Hubble parameter. It is also used to compute cosmic time, distances, volumes
 etc at an epoch based of the scale factor or redshift for a given cosmological
-parameters. This is called the concordance model.
+parameters. This is called the concordance model. The current constraints on the
+cosmological parameters indicates: $\Omega_m \sim 0.3$, $\Omega_{\Lambda} \sim 0.7$
+and $h \sim 0.7$.
+
 
 \subsection{Equation of state of dark-energy}
 
-Consider the second Friedmann equation (equation \ref{eqn:fe2} 
-also known as the equation of motion for the 
-Universe); in order to have an accelerated expansion of the Universe $\ddot{a}>0$,
+Differentiating equation \ref{eqn:fe1} and making use of equation
+\ref{eqn:firstlaw}, we get the equation of motion of the Universe
+also referred as the second Friedman equation,
+
+\begin{equation}
+\centering
+		\left( \dfrac{\ddot{a}}{a} \right) = -\dfrac{4 \pi G}{3} 
+			\left( \rho + \dfrac{3p}{c^2} \right),
+\label{eqn:fe2}
+\end{equation}
+
+In order to have an accelerated expansion of the Universe $\ddot{a}>0$,
 there must be a component of the energy density of the Universe that has,
 \begin{equation}
 	p < -\dfrac{\rho c^2}{3} 
@@ -1349,6 +1345,7 @@ termed it as frequency of occurrence in a set of trials.
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
+
 \section{Motivation}
 
 The theory of structure formation is partially understood --  at large scales 
