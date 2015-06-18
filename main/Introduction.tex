@@ -1,17 +1,18 @@
 \chapter{Introduction}\label{Introduction}
 
-Our understanding of the Universe has advanced with the advancement in our 
+Our understanding of the Universe has developed significantly with the advancement in our 
 theoretical, observational and computational abilities in the last two decades. 
 While we are confident about the flatness of the Universe from Cosmic Microwave 
 Background (CMB) experiments, 
 the indicative accelerating Universe from Supernovae-Ia surveys is well supported
-by a cosmological constant. Finally a non-interacting dark matter is essential 
+by a cosmological constant. Finally a non-interacting collision-less dark matter is essential 
 to explain the kinematics of galaxies in clusters, light-curves of galaxies, 
 gravitational lensing etc. A comprehensive model, the so-called $\Lambda$CDM,
 is very successful in explaining most of the observations independently and 
 combined constraints tells us that our Universe is composed of about 70$\%$
 dark-energy in the form of cosmological constant $\Lambda$, about 25$\%$ non-interacting
-cold dark-matter (CDM) and only 5$\%$ of the ordinary (baryonic) matter.  
+cold dark-matter (CDM) and only 5$\%$ of the ordinary (baryonic) matter 
+\citep{2015arXiv150201589P}. 
 
 %------------------------------------------------------------------------------
 
@@ -28,9 +29,10 @@ However, we cannot observe the past of the Milky way, we can observe that for si
 galaxies and draw a typical evolutionary picture of the galaxies. Not only for this
 reason, studying the distribution of galaxies is interesting in many other ways too. 
 The distribution of galaxies clearly indicates that the Universe is highly 
-inhomogeneous around us, but if we go at sufficiently large scales and observe, 
-galaxy distribution is very isotropic. Observation of the CMB also indicates 
-that the Universe is isotropic up to 1 part in $10^{5}$. 
+inhomogeneous around us, but if we go at sufficiently large scales, 
+galaxy distribution is very isotropic \citep{2012ApJS..203...21A,2015arXiv150100963A}.
+Observation of the CMB also indicates 
+that the Universe is isotropic up to 1 part in $10^{5}$ \citep{2011A&A...536A..19P}. 
 If we combine the isotropic principle with the 
 assumption that our place in the Universe is not a special one and another observer
 at another location in the Universe will also see the similar isotropic Universe,
@@ -43,17 +45,17 @@ solution to the Einstein's field equation of General Relativity and lead to the
 Friedmann-Lemaitre-Robertson-Walker (FLRW) metric,
 
 \begin{equation}
-	\mathrm{d}s^2 = c^2dt^2 - a^2(t)\left[ \mathrm{d}\chi^2 + f_K^2(\chi)
+	\mathrm{d}s^2 = c^2\mathrm{d}t^2 - a^2(t)\left[ \mathrm{d}\chi^2 + f_K^2(\chi)
 					\left( \mathrm{d}\theta^2 + \sin^2\theta \mathrm{d}\phi^2 
 					\right)  \right]
 	\label{eqn:metric}
 \end{equation}
 \\
-where, $a(t)$ is the cosmic scale factor which increases with the cosmic time ($t$)
+where, $a(t)$ is the {\it cosmic scale factor} which increases with the {\it cosmic time} ($t$)
 and normalised to unity today ($a(t_0)=1$). 
-Hence, the cosmic scale factor (or scale factor henceforth) $a(t)$ defines the
+Hence, the cosmic scale factor (or scale factor henceforth) defines the
 size of the Universe at cosmic time $t$ relative to today. Therefore, just like 
-the cosmic time $t$, $a$ also characterises the epoch in the cosmic history.
+the cosmic time, scale factor also characterises the epoch in the cosmic history.
 $c$ is the speed of light. $\chi$ is the
 radial {\it comoving} coordinate and $\theta\ \& \ \phi$ are the angular coordinate on a
 unit sphere. $f_K(\chi)$ relates the distance to the circumference that depends 
@@ -68,7 +70,7 @@ f_K(\chi) & = K^{-1/2} \sin(K^{1/2}\chi) \quad (K>0) \\
 
 This metric is written in co-moving coordinate such that the coordinates of the
 observer are expanding with the Universe and therefore, it does not feel any
-acceleration. 
+acceleration.
 
 
 
@@ -78,7 +80,7 @@ acceleration.
 Consider a source at time $t$ in the cosmic history emitting light reaching us today. 
 Due to the expansion of the Universe, the wavelength of the light observed 
 ($\lambda_{\rm obs}$) will be different (stretched or redshifted) from the 
-wavelength at which it was emitted ($\lambda_{\rm emit}$) by a factor by which
+wavelength at which it was emitted ($\lambda_{\rm emit}$) by a factor to which
 the Universe is expanded during the travel time of the photons, i.e.,
 \begin{equation}
 	(1+z) \equiv \dfrac{\lambda_{\rm obs}}{\lambda_{\rm emit}} = \dfrac{a_{\rm obs}}{a_{\rm emit}}
@@ -89,12 +91,13 @@ and as conventionally we define $a_{\rm obs} = a_{\rm t_0} = 1$, we have,
 	(1+z) = \dfrac{1}{a(t)} \quad \Rightarrow \quad \mathrm{d}z = \dfrac{\mathrm{d}a}{a^2}
 \end{equation}
 \\
-where, $z$ is known as the cosmological redshift of the source and also describe
+where, $z$ is known as the {\it cosmological redshift} (or hereafter redshift) 
+of the source and also describe
 the epoch in the cosmic history of the Universe just like the scale factor $a$ or 
 the cosmic time $t$. In many texts, the terms scale factor 
-$a$ and redshift $z$ and cosmic time $t$ will be used interchangeably 
+$a$, redshift $z$ and cosmic time $t$ are used interchangeably 
 characterizing the epoch in the cosmic history of the Universe. The redshift
-of a source is a very important direct observable and has wide variety of 
+of a source is a direct observable and has wide variety of 
 applications while studying cosmology.
 
 
@@ -102,13 +105,13 @@ applications while studying cosmology.
 \subsection{Kinematics}
 
 
-Suppose an expanding sphere. An element on this sphere is marked by
-its position $x$. Because the expansion is supposed to be radial, we have the
-position of the element at time $t$ to be $r(t) = a(t) x$. Differentiating 
+Consider an expanding sphere. An element on this sphere is marked by
+its position $\mathbf{x}$. Because the expansion is supposed to be radial, we have the
+position of the element at time $t$ to be $\mathbf{r}(t) = a(t) \mathbf{x}$. Differentiating 
 this equation with respect to the time we get,
 
 \begin{equation}
-	v(r,t) = \dot{r} = \dot{a} x = \dfrac{\dot{a}}{a} r(t)
+	\mathbf{v}(r,t) = \dot{\mathbf{r}} = \dot{a} \mathbf{x} = \dfrac{\dot{a}}{a} \mathbf{r}(t)
 	\label{eqn:hubble}
 \end{equation}
 where we define the Hubble parameter or the expansion rate as,
@@ -117,9 +120,7 @@ where we define the Hubble parameter or the expansion rate as,
 	H(t) \equiv \dfrac{\dot{a}}{a};\quad H_0 \equiv H(t_0) = \dot{a}(t_0)
 \end{equation}
 \\
-Equation \ref{eqn:hubble} is the same as the Hubble law at any cosmic time $t$. 
-
-
+Hubble parameter today, i.e. $H_0$ also refers to as Hubble constant. 
 
 
 \subsection{Cosmic time and distances}
@@ -128,13 +129,13 @@ Equation \ref{eqn:hubble} is the same as the Hubble law at any cosmic time $t$.
 Now it is straightforward to calculate the age of the Universe at time $t$ from the big bang
 when scale factor was $a(t)$,
 \begin{equation}
-	H(a) = \dfrac{\dot{a}}{a} = \dfrac{1}{a} \dfrac{da}{dt},
+	H(a) = \dfrac{\dot{a}}{a} = \dfrac{1}{a} \dfrac{\mathrm{d}a}{\mathrm{d}t},
 \end{equation}
 \\
 which gives,
 
 \begin{equation}
-	t(a) = \int_0^a \dfrac{da^{\prime}}{a^{\prime}H(a^{\prime})}.
+	t(a) = \int_0^a \dfrac{\mathrm{d}a^{\prime}}{a^{\prime}H(a^{\prime})}.
 \end{equation}
 \\
 This equation gives the age of the Universe when its size was
@@ -155,62 +156,67 @@ today by integrating equation \ref{eqn:c2},
 
 \begin{equation}
 	-\mathrm{d}\chi(a) = \dfrac{c\mathrm{d}t}{a} = 
-	 \dfrac{c\mathrm{d}a}{a^2 H(a)}
-	 \Rightarrow \chi(a) = \int_1^a \dfrac{\mathrm{d}a}{a^2H(a)}
+	 \dfrac{c\mathrm{d}a}{a^2 H(a)} \quad
+	 \Rightarrow \quad \chi(a) = \int_1^a \dfrac{\mathrm{d}a}{a^2H(a)}
 \end{equation}
 \\
-Therefore, one can use $t$, $a$, $z$ and $\chi$ as variable to characterize the
+Therefore, one can use $t$, $a$, $z$ and $\chi$ as variables to characterize the
 radial distance of a source that we see today or the epoch at which the light was
 emitted by the source. 
 
 Suppose one knows the size ($d$) of a source at redshift $z$ and hence measure its
 distance by measuring the angle subtending to the observer ($\theta$), this distance is referred
-to as angular diameter distance and define as,
+to as {\it Angular Diameter Distance} and define as,
 \begin{equation}
-	D_{\rm ang}(z) = \dfrac{d}{\theta} = a(z)\chi = \dfrac{\chi}{1+z}
+	D_{\rm ang}(z) = \dfrac{d}{\theta} = \chi a = \dfrac{\chi}{1+z}
 \end{equation}
 \\
-the multiplicative factor $a(z)$ is due to the fact that the Universe was smaller by 
+the multiplicative factor $a$ is due to the fact that the Universe was smaller by 
 a factor of $a$ when the light was emitted.  Angular diameter distance 
 is the distance to the source that we observe today if the Universe were
-stop expanding when the photons were emitted from the source.
+stopped expanding when the photons were emitted from the source.
 
 Similarly, if one measure the flux ($S$) from a source and model its luminosity ($L$), it is
-possible to infer the distance to the source referred as Luminosity distance and 
+possible to infer the distance to the source referred as {\it Luminosity Distance} and 
 given by,
 \begin{equation}
 	D_{\rm lum}(z) = \sqrt{\dfrac{L}{4\pi S}} = \dfrac{\chi}{a(z)} = (1+z)\chi
 \end{equation}
 \\
-The luminosity scales with $1/a^2$ where one $a$ is the contribution of the redshifted
-photons and the other for the time dilation. Hence, the luminosity distance scales
+The luminosity scales with $1/a^2$ where one $a$ is the contribution due to the redshift of
+the photons and the other for the time dilation. Hence, the luminosity distance scales
 as $1/a$.
 
 The era of modern cosmology begins with an observational breakthrough by Edwin Hubble 
-in 1928 stating that the galaxies moves away from us with a radial velocity ($v$) which
-is proportional to their distance ($r$). The proportionality constant is known
-as the Hubble constant ($H_0$) i.e., $v=H_0 r$, also known as Hubble's law. 
+in 1928 stating that the galaxies moves away from us with a radial velocity ($\mathbf{v}$) which
+is proportional to their distance ($\mathbf{r}$) \citep{1929PNAS...15..168H}. 
+The proportionality constant is known
+as the Hubble constant ($H_0$) i.e., $\mathbf{v}=H_0 \mathbf{r}$, also known as Hubble's law. 
 The measurement consists of the redshift of the galaxies, that he referred as
 {\it nebulae} and their luminosity distance. For local Universe, it follows
 a linear relation. 
 This breakthrough along with the
 homogeneity interpret as the observational evidence for the expansion of the Universe and
-put an end to the static world models. The Hubble constant, $H_0$, usually parametrized as, 
+put an end to the static world models. The Hubble constant $H_0$ usually parametrized as, 
 $H_0 = h\ 100\ \mathrm{km\ s^{-1}\ Mpc^{-1}} \approx h/10^{10}\ \mathrm{year^{-1}}$,
 where, $h$ is a dimensionless number of the order unity and gives the 
 Hubble constant in units of 10 billion years inverse. 
 
 To measure the luminosity distance to a source, we need to 
 knows its intrinsic luminosity and measure its flux. One such objects are the
-Supernovae-Ia which are also known as the {\it standard candles} in the Universe. They
+Supernovae-Ia which are also known as the {\it standard candles} in the Universe
+\citep{1993ApJ...405L...5B,2007AIPC..924..330D}. They
 don't really have same intrinsic luminosity, as the name can be misleading, but 
 empirically the relation between their peak luminosity and width of the light-curves
 has a very tight correlation and therefore it is possible to infer the peak-luminosity
-of such objects by looking at their light curves. Two teams, lead by Saul Perlmutter and
-Brian Schmidt, independently measure these distances along with their redshift and
+of such objects by looking at their light-curves. Two teams, lead by Saul Perlmutter
+\citep{1999ApJ...517..565P} and
+Brian P. Schmidt \citep{1998ApJ...507...46S}, 
+independently measure these distances along with their redshift and
 concluded that the observed fluxes of the high redshift Supernovae-Ia requires that
-the Universe is expanding at an accelerated rate. In 2011, Saul Perlmutter, Adam G Riess and
-Brian P. Schmidt shared a noble prize in physics for this remarkable breakthrough. 
+the Universe is expanding at an accelerated rate. In 2011, Saul Perlmutter, 
+Brian P. Schmidt and Adam G. Riess
+shared a noble prize in physics for this remarkable breakthrough. 
 
 
 
@@ -218,7 +224,7 @@ Brian P. Schmidt shared a noble prize in physics for this remarkable breakthroug
 \section{The concordance model}
 
 
-Applying FRW metric (equation \ref{eqn:metric}) to the Einstein's field equations, 
+Applying FLRW metric (equation \ref{eqn:metric}) to the Einstein's field equations, 
 which relates the Einstein tensor (geometrical object) to the Energy-Momentum tensor, 
 reduces the components of the field equation into an independent dynamical equations
 for the scale factor $a$,
@@ -233,9 +239,10 @@ H^2(a) \equiv \left( \dfrac{\dot{a}}{a} \right)^2 =
 where, $\rho$ and $p$ are the density and pressure respectively for the matter content
 of the Universe that must follow a homogeneous and perfect fluid dynamics. 
 $K$ is the curvature parameter and follows $K=0$ for a flat Universe. $G$ and $c$ are
-the Gravitation constant and speed of light respectively. 
+the Gravitation constant and speed of light respectively. Equation \ref{eqn:fe1} is 
+also popularly known as the {\it first Friedmann equation}.
 
-$\rho$ may contain more than one component and changes with time as the Universe 
+Now, $\rho$ may contain more than one component and changes with time as the Universe 
 expands. One can distinguish three main components: matter, radiations and vacuum 
 energy. In order to determine the evolution of the densities of these components,
 lets start with the first law of thermodynamics in an adiabatically expanding Universe,
@@ -295,10 +302,10 @@ $K=0$ yields,
 	\rho_{cr} \equiv \rho_0 = \dfrac{3H_0^2}{8\pi G}
 \end{equation}
 \\
-$\rho_{cr}$ is the critical density of the Universe and characterises the total density
+$\rho_{cr}$ is defined as the critical density of the Universe and characterises the total density
 which is needed to keep the Universe spatially flat. One can normalise the densities of
 various components of the Universe with critical density to define dimensionless density
-parameters or the order unity,
+parameters of the order unity,
 
 \begin{equation}
 	\Omega_m \equiv \dfrac{\rho_{m0}}{\rho_{cr}};\quad
@@ -308,7 +315,7 @@ parameters or the order unity,
 \end{equation}
 
 It also follows that for a spatially flat Universe, total normalised 
-density parameter $\Omega_m$
+density parameter $\Omega_0$ is unity,
 
 \begin{equation}
 	\Omega_0 = \Omega_m + \Omega_r + \Omega_{\Lambda} = 1
@@ -327,10 +334,10 @@ Finally we can re-write the first Friedmann equation depending on these paramete
 \\
 This equation is very important in cosmology and gives the evolution of the 
 Hubble parameter. It is also used to compute cosmic time, distances, volumes
-etc at an epoch based of the scale factor or redshift for a given cosmological
+etc at an epoch based on the scale factor or redshift for a given cosmological
 parameters. This is called the concordance model. The current constraints on the
 cosmological parameters indicates: $\Omega_m \sim 0.3$, $\Omega_{\Lambda} \sim 0.7$
-and $h \sim 0.7$.
+and $h \sim 0.7$ \citep{2015arXiv150201589P}.
 
 
 \subsection{Equation of state of dark-energy}
@@ -348,7 +355,7 @@ also referred as the second Friedman equation,
 \\
 Employing this equation, it is clear that in order to have an 
 accelerated expansion of the Universe $\ddot{a}>0$,
-there must be a component of the energy density of the Universe that has,
+there must be a component of the energy density of the Universe that follows,
 \begin{equation}
 	p < -\dfrac{\rho c^2}{3} 
 \end{equation}
@@ -366,7 +373,7 @@ It is also not necessary to assume that equation of state of dark-energy
 is constant over time. Many different parametrizations were proposed
 for an evolving equation of state with cosmic time $w(a)$. One more popular
 and widely used parametrization is the so-called CPL (Chavallier and Polarski
-2001; Linder 2003),
+2001 \cite{2001IJMPD..10..213C}; Linder 2003 \citep{2003PhRvL..90i1301L}) parametrization,
 \begin{equation}
 	w(a) = w_0 + (1-a)w_a
 \end{equation}
@@ -377,15 +384,16 @@ the scale factor.
 \subsection{Thermal History of the Universe}
 
 Our current understanding of the Universe from various cosmological probes 
-indicates that $h \sim 0.7$, this gives the
+indicates that $h \sim 0.7$ that gives the
 age of the Universe $\sim$13.7 Gyr.  $\Omega_m \sim 0.3$ which is dominated
 by the cold dark-matter that interacts only gravitationally.
-$\Omega_{\Lambda} \sim 0.7$ which is the dominant component of the energy
+$\Omega_{\Lambda} \sim 0.7$ with $w=-1$ 
+which is the dominant component of the energy
 content of the Universe and applies negative pressure hence is responsible
 for the accelerated expansion of the Universe. Finally, $\Omega_r \sim 10^{-4}$
 and mainly dominated by a background radiation at temperature $\sim$ 2.7 K that
 can be observed at microwave wavelength in all directions in the sky. This radiation is
-known as the Cosmic Microwave Background (CMB) radiations and shows a nearly
+known as the {\it Cosmic Microwave Background} (CMB) radiations and shows a nearly
 perfect black-body spectrum found in nature.
 
 Using equation \ref{eqn:dens}
@@ -395,7 +403,7 @@ component. Also  radiations loses energy due
 to the redshift, the CMB photons in the past must be very energetic and
 therefore hot (as the expansion of the Universe preserves the black-body 
 spectrum). Therefore the temperature of the CMB photons (and hence that 
-of the Universe) drop linearly with the scale factor or the redshift,
+of the Universe) drops linearly with the scale factor or the redshift,
 
 \begin{equation}
 	T_{\rm CMB}(z) = T_0(1+z)
@@ -406,11 +414,12 @@ were very small, close to zero, and hence the Universe must be very hot. Just
 after the Big Bang, the temperature was so high that the kinetic energy
 of protons is large enough to overcome the Coulomb barrier and fuse with other
 protons, whereas the neutrons has no such barrier. So, it is expected that
-heavier nuclei were synthesised during the early times in the Universe, this
-process is also known as Big-Bang Neucleosynthesis (BBN). As the Universe expands, 
+light nuclei were synthesised during the early times in the Universe, this
+process is also known as {\it Big-Bang Neucleosynthesis} (BBN). 
+As the Universe expands, 
 it cools down rapidly and hence the process of BBN can only
 happen up to certain time scale. During the first three minutes of the cosmic
-evolution, all the high mass nuclei were formed and then the temperature
+evolution, all the light mass nuclei were formed and then the temperature
 dropped below the binding energies of the lightest nuclei and thus no
 further BBN can happen. During this time, $^4{\rm He}$ were formed and 
 its mass fraction reaches to about 25 percent and only a small fraction 
@@ -418,7 +427,7 @@ Deuterium, Lithium and Beryllium were formed.
 The BBN is very important
 aspect of standard model of cosmology, however, we are not discussing it in more
 details. For a thorough review on BBN
-see \cite{}. The abundance of these light elements 
+see \cite{2000PhST...85...12T,2006astro.ph..1514F}. The abundance of these light elements 
 can be calculated with a nuclear reaction network and can be well matched
 with the current observations putting strong constraints on the physical
 baryon density of the Universe. This successful comparison is one of the
@@ -430,20 +439,23 @@ together to form neutral hydrogen
 atom. This process is called {\it Recombination}. As during the recombination,
 the CMB photons were last scattered, sometime it is also referred
 as the {\it last scattering surface}. After recombination photons 
-get decouple from baryon-photon fluid and stream freely which
+get decoupled from baryon-photon fluid and stream freely which
 can be observed today as the CMB. 
 This happen $\sim$380,000 years after the big bang or at redshift 
 $\sim$1100. It was not an instantaneous process, but in a short time
 the Universe become neutral. When we look at the CMB sky, we actually see
 this ionization front. In 1965, A. Penzias and R. Wilson discovered the CMB
 accidentally when they noted an excess antenna temperature of about 3K that
-they could not remove from any known source. They were given a Noble prize in 
+they could not remove from any known source \citep{2006astro.ph..1514F}. 
+They were given a Noble prize in 
 physics in 1978. In 1992, COsmic Background Explorer (COBE) satellite that
 scan the full CMB sky and found fluctuations in CMB temperature of the 
-order $10^{-5}$. These anisotropies originate from the matter density
+order $10^{-5}$ \citep{1996ApJ...473..576F,1999AIPC..476....1S}. 
+These anisotropies originate from the matter density
 fluctuations at the time of the recombination. COBE also observed a perfect
 black-body spectrum in CMB. In 2006, when another CMB all sky survey 
-Wilkinson Microwave Anisotropy Probe (WMAP) confirmed the findings of COBE
+Wilkinson Microwave Anisotropy Probe (WMAP) \citep{2006PThPS.163..185K} 
+confirmed the findings of COBE
 with much higher signal to noise, COBE team leaders George Smoot and John Mather
 were awarded with a Noble Prize in physics. Very recently these anisotropies were studied
 with much better signal to noise and up to much smaller scales by Planck satellite
@@ -456,7 +468,8 @@ re-ionized either by the first stars or the quasars. As it is not an
 instantaneous phenomenon, the re-ionization of the Universe must have
 started much before redshift $6$. The most recent results from
 CMB observations indicates that the redshift of the re-ionization is
-$\sim 8$. The period between the recombination (redshift $\sim 1100$)
+$\sim 8$ \citep{2015arXiv150201589P}. 
+The period between the recombination (redshift $\sim 1100$)
 and the re-ionization (redshift $\sim 8$) is called the {\it Dark Ages}.
 
 
@@ -478,7 +491,7 @@ Two major conceptual problems in the framework come as its main drawbacks:
 				in the Universe. In both cases, it wouldn't be possible for life
 				of any form could exist to study the flatness of the Universe. Hence
 				an extreme fine tuning of the density parameters is needed at early
-				times in order for life to exist today.
+				times in order for life to exist today. For a review see \cite{2012PASA...29..395K}.
 
 	\item Horizon problem: Due to the finite speed of light, we can only observe
 				a finite part of the Universe, 
@@ -492,20 +505,21 @@ Two major conceptual problems in the framework come as its main drawbacks:
 				size of the horizon at the time of the recombination 
 				comes out to be $\sim 1^{\circ}$. This means
 				that the regions in the sky (or CMB sky) which are separated by 
-				more than a degree were never causally connected. Nevertheless, as
+				more than a degree were never causally connected. Still as
 				we observe in the CMB temperature fluctuations, the temperature of
 				whole CMB sky is almost the same and relative difference is of the 
 				order $10^{-5}$. How come the regions in the sky are so isotropic
-				when they never exchanged information?
+				when they never exchanged information? For a review see \cite{2012PASA...29..395K}.
 \end{itemize}
 
 One can always assume the initial condition to be like that these two conditions
 follows. But this does not explain anything and is highly unlikely. In 1980's 
-a new model was developed, known as {\it inflationary model}, came to rescue. It presume
+a new model was developed known as the {\it inflationary model} (or inflation;
+for a review see \cite{2001hep.ph....1119B,2003hep.ph....4257T,2006RvMP...78..537B}). It presume
 that at very early time the vacuum energy was much higher than today and dominated
 the Hubble expansion resulting in an exponential expansion. This exponential
 expansion or the inflationary phase ended when the vacuum energy transformed into
-matter and radiation via a process referred as {\it reheating}.
+matter and radiation via a process referred as {\it reheating \citep{2006RvMP...78..537B}}.
 
 This model (cosmic inflation) solves the flatness problem and horizon problem (
 and few others too). Due to the very fast exponential expansion in early times, the
@@ -518,9 +532,11 @@ The scenario of the inflation, the exponential expansion of the Universe at
 early time, solves many problems in $\Lambda$CDM, yet the physical mechanism
 is unknown. The one very big problem is that how and when the inflationary phase come
 to an end and why not at any other time. Nevertheless, inflation is one of the
-important and plausible scenario in the framework of $\Lambda$CDM model and because
-it follows spatial flatness  of the Universe, we can drop the $K$ terms in the Friedmann
-equations in the rest of the text.
+important and plausible scenario in the framework of $\Lambda$CDM model. Because
+inflation follows spatial flatness  of the Universe, 
+we can drop the $K$ terms in the Friedmann
+equations in the rest of the text. For most recent constraints on 
+the inflationary models, see \cite{2015arXiv150202114P}.
 
 %------------------------------------------------------------------------------
 \section{Structure Formation in the Universe}
@@ -529,10 +545,11 @@ An absolutely homogeneous Universe would be very easy to write mathematics for, 
 would be boring. Thanks to the inhomogeneities in the Universe, we exist. The Universe
 shows these inhomogeneities or structures on various scales up to $\sim$ 
 200 $h^{-1} \mathrm{Mpc}$. The seeds
-of those homogeneties were the tiny quantum fluctuations, which in our concordance 
+of those homogeneties were the tiny quantum fluctuations \citep{1939Phy.....6..899S}
+, which in our concordance 
 model, is stretched up by the {\it inflation} and transform into small density
-perturbations which can be observed in the  fluctuations of the CMB. 
-At high redshift, these perturbations were still very small and as 
+perturbations which can be observed in the CMB. 
+During early dark ages, these perturbations were still very small and as 
 a result of gravitational instability, these small perturbations 
 grow and form the large-scale structures of the Universe. 
 So, the history of the  structure formation in the Universe, as described in the 
@@ -546,10 +563,10 @@ large that higher order terms cannot be ignored.
 
 The earliest perturbations we see in nature is the fluctuations in the
 CMB which are due to the perturbations in the matter density
-field. Because these perturbations are too small ($\sim 10^{15}$), 
+field. Because these perturbations are too small ($\sim 10^{-5}$), 
 the higher order perturbation
 terms can be neglected and hence, linear theory can describe growth of structures
-at very high redshift (the early stages of the dark ages). 
+at very high redshift (early dark ages). 
 Secondly, the Universe is homogeneous at scales larger than
 $\sim$ 200 $h^{-1} \mathrm{Mpc}$ and therefore, if we smooth the distribution
 of matter at scales larger than this, it looks homogeneous and hence the perturbations
@@ -575,12 +592,12 @@ to be zero), which is a good approximations at the
 high redshift, with dark-matter as the dominant component being collision-less. 
 So, we can approximate the matter as a pressure-less fluid which is fairly 
 valid at large scales. The fluid equations for vanishing pressure are: 
-(i) Continuity equation, describing the conservation of matter; (ii) Euler
-equation, describing the equation of motion for the fluid and finally (iii) 
-Poisson's equation describing the gravitational field. Solving these three coupled
+(i) {\it Continuity equation}, describing the conservation of matter; (ii) {\it Euler
+equation}, describing the equation of motion for the fluid and finally (iii) 
+{\it Poisson equation} describing the gravitational field. Solving these three coupled
 equations in linear regime (i.e., neglecting all higher powers of $\delta$) in 
 the comoving coordinates will give
-the so-called {\it Growth equation}:
+the so-called {\it Growth Equation}:
 
 \begin{equation}
 \centering
@@ -597,7 +614,7 @@ It is valid for both real and Fourier space $\tilde{\delta}$ where we use the co
 	\tilde{\delta}(k,t) = \int_{-\infty}^{\infty} \delta(r,t) \exp(-2\pi \imath kr) \mathrm{d}r.
 \end{equation}
 
-As $\delta$ is a function of both space
+In equation \ref{eqn:growth}, $\delta$ is a function of both space
 and time, but the derivative is only with respect to the time and there is 
 no space term in the coefficients, its an ordinary second order differential equation.
 The solution to this equation can be 
@@ -611,8 +628,8 @@ growth of the structures, $D_+(t)$, and therefore,
 		\label{eqn:growthfactor}
 \end{equation}
 \\
-$D_+(t)$ is also known as the {\it growth factor}. It describes the evolution of the
-linear density fluctuations with cosmic time. Therefore, once the initial conditions
+$D_+(t)$ is also known as the {\it Growth Factor}. It describes the evolution of the
+linear density fluctuations with cosmic time. Once the initial conditions
 are defined, this equation can be used to get the growth of linear perturbations. 
 
 If we also try to include the contribution of pressure from gas etc., these equations remains
@@ -636,7 +653,7 @@ Now when we have described the evolution of density field with cosmic time, with
 without pressure term, one can predict the fluctuations at any time given the initial
 conditions. Describing the initial conditions for the density fluctuations immediately
 raises the question: how to characterize a function describing the density field $\delta$
-in space at early times. One cannot expect any physical theory to do that, as the density field
+in space at early times? One cannot expect any physical theory to do that, as the density field
 in initial conditions is a random field, at best one can only hope to describe its
 statistical properties. 
 
@@ -644,10 +661,10 @@ The simplest of the statistics is the two-point function. Suppose there is a
 completely random distribution of galaxies in the Universe without any deterministic 
 force. Now, if we ask what is the probability of finding a galaxy close to another
 galaxy at a distance $r_1$ and at another distance $r_2$, it must be the same. 
-However, due to Gravitational force, due to which galaxies attracts each other, 
+However, due to the Gravitational force galaxies attracts each other, 
 there is this excess probability to find a galaxy closer to another galaxy than
 further. So to say, the probability of finding another galaxy at $r_1$ is larger than
-at $r_2$ if $r1<r_2$.
+at $r_2$ if $r_1<r_2$.
 
 This excess probability can be modelled as the {\it two-point correlation function} (2PCF) 
 $C(x,y)$ and define as, 
@@ -663,23 +680,24 @@ power spectrum ($P(k)$) of the density field or commonly known as
 
 \begin{equation}
 		P(k)  =  \langle |\tilde{\delta}(k) |^2\rangle 
+		\label{eqn:pkk}
 \end{equation}
 \\
-$k$ is the wave-vector at the corresponding scale. So, now if we can 
+where, $k$ is the wave-vector at the corresponding scale. So, now if we can 
 define the matter power spectrum of the initial density field and combine
 it with the growth factor, we have complete description of the evolution 
 of linear density field in the Universe. 
 
-Now, define the initial power spectrum we have two important facts to 
+To define the initial power spectrum we have two important facts to 
 take into account:
 \begin{itemize}
   \item	First: at very early times, all relevant length scales
 	were larger than the size of the horizon, there were no characteristic scales
 	in the units of which $k$ can be measured. The only mathematical function
-	that for a length that does not require a characteristic length scale is
+	for length that does not require a characteristic length scale is
 	the power law. Therefore we expect the initial power spectrum must be a power
 	law with some index (say $n_s$), $P(k)\propto k^{n_s}$. $n_s$ is also known
-	as the spectral index.
+	as the {\it spectral index}.
   \item Second: the growth of the density fluctuations depends on their length-scale
   	as compared to the horizon size at that epoch. Also the growth of various
   	perturbations were different if they were entered the horizon in a radiation-
@@ -703,7 +721,7 @@ power spectrum at any epoch or redshift $z$ as,
 
 The shape of the linear power spectrum is determined by the parameter $n_s$ and 
 transfer function, however, there is a different form of normalisation in 
-practice such that if one counts galaxies in sphere of radius 8 $Mpc/h$, then
+practice such that if one counts galaxies in sphere of radius 8 $h^{-1} \mathrm{Mpc}$, then
 the average relative error is close to unity, i.e.,
 \begin{equation}
 	\langle \delta^2(8 h^{-1} \mathrm{Mpc}) \approx 1 \rangle
@@ -725,12 +743,12 @@ at scale $R$ and given by,
 and therefore we have,
 
 \begin{equation}
-	\sigma^2(8 Mpc/h) \equiv \sigma_8^2 \approx 1
+	\sigma^2(8 h^{-1} \mathrm{Mpc}) \equiv \sigma_8^2 \approx 1
 \end{equation}
 \\
 $\sigma_8$ is the parametrisation in practice to normalize the power
 spectrum. $\sigma_8$ along with the spectral index $n_s$ completely
-describe the initial conditions of the density field.
+describe the power spectrum for the initial density field.
 
 %=====================================================================
 % This section is commented
@@ -802,7 +820,7 @@ but since they are based on strong assumption which are
 certainly not true, they either become unreliable when precision is required or have
 to be calibrated on simulations. Finally simulations are the ultimate solution but they
 are limited by the volume factor and resolution and are computationally expensive. 
-Lets discuss it in more details. 
+
 
 \subsubsection{N-body simulations}
 
@@ -813,7 +831,8 @@ very difficult to describe by other methods. The smaller scales where the baryon
 interactions become important has only limited success, but the progress has a very
 steep slope. For simplicity, I shall restrict the discussion about dark-matter only (DMO)
 simulations, also popularly known as $N-$body simulations,
-in this section. Baryonic processes in structure formation will be discussed in section \ref{}.
+in this section. Baryonic processes in structure formation will be 
+discussed in section \ref{sec:baryons}.
 
 An N-body simulation
 characterizes to simulate a Universe consists of only dark-matter (and no baryons) that 
@@ -825,11 +844,11 @@ to describe analytically. The basic principles of such simulations are described
 It is not possible (or at least very expensive) to simulate a volume equivalent to the
 observable Universe, at high resolution in order to study the evolution of individual
 haloes specially towards the low mass end. Assuming that the Universe is homogeneous
-at cosmological scales (or the scales of the largest structures BAO), the simulation
-volume must at least include these structures. So a cube with side length $\sim$ 200 Mpc/h
+at cosmological scales (or the scales of the largest structures), the simulation
+volume must at least include these structures. So a cube with side length $\sim 200h^{-1} \mathrm{Mpc}$
 or larger is needed to simulate a true representative of the Universe. Further, the
 particles close to the boundaries of the cube must also feel the gravitational pull
-from outside the box and hence one cannot consider the space outsize the box to be 
+from outside the box and hence one cannot consider the space outside the box to be 
 empty. Since the Universe is homogeneous larger that the size of the box defined, one
 can assume the {\it periodic boundary conditions}, for example if a particle leaves the box from left
 side, it re-enter the box from the right side. Also, the particles close to the left boundary
@@ -854,13 +873,14 @@ there is always a trade-off between large volumes and higher resolutions.
 Analysing the output of an $N-$body simulation is a fun exercise and a lot can be learnt
 from it. First, merely the visualisation of the evolution of particle positions gives
 you an insight and better understanding of the formation of cosmic web and large
-scale structures. Also, one can calculate the non-linear matter power spectrum and its
+scale structures of the Universe. 
+Also, one can calculate the non-linear matter power spectrum using equation \ref{eqn:pksim} and its
 evolution and constrain the theory of structure formation. One very important
 application is to search for dark-matter haloes in the simulations and compare
-it with other physical theories put constraints on their parameters and also
+it with other physical theories to put constraints on their parameters and also
 to compare with observations. However, the relation between dark-matter haloes
-and luminous galaxies distribution need further considerations and is beyond
-the scope of this work. 
+and luminous galaxies distribution need further considerations like galaxy 
+bias etc and is beyond the scope of this work. 
 
 \subsubsection{The halo model}
 
@@ -869,8 +889,8 @@ the clustering and growth of structures in the Universe. In this framework, all 
 in the Universe is assumed to be in the form of spherical halos whose radius are defined by a 
 density threshold, usually $R_{200}$ which is the distance from the centre of the halo where
 the density inside the sphere drops to 200 times the mean matter density of the Universe. 
-The  distribution of halos are assumed to follow a radial density 
-profile, which depends on the mass of the halos, truncated at $R_{200}$ or at virial 
+The  distribution of mass inside the haloes are assumed to follow a radial density 
+profile, which depends on its mass, truncated at $R_{200}$ or at virial 
 radius ($R_{\rm vir}$).
 
 The assumptions of the halo model are invalid in details but are well approximated and 
@@ -879,10 +899,10 @@ hence the estimators for the matter power spectrum are well in agreement
 to the more accurate simulations. However, due to these invalid approximations, it is not
 possible to achieve sub-percent level accuracy with this estimator. 
 
-There are particularly four ingredients to model the power spectrum in halo model framework:
+There are particularly four ingredients to model the power spectrum in the halo model framework:
 
 \begin{itemize}
-	\item Linear power spectrum.
+	\item Linear power spectrum $P_{\rm Lin}(k)$.
 
 	\item Radial density profile of the halos. Usually for dark-matter only Universe, the so-called
 			Navarro-Frenk-White (NFW) is used as a Universal profile completely characterized by the
@@ -892,13 +912,24 @@ There are particularly four ingredients to model the power spectrum in halo mode
 			\end{equation}
 			\\
 			where, $r_s$ and $\rho_s$ are the scale radius and characteristic density at scale radius
-			respectively. Here we define the concentration parameter of the halo as,
+			respectively.
 
-	\item Mass function ($f(M)$): a functional form defining the number of halos as a function of halo
-			mass. 
+	\item Halo mass function $f(\nu)$: a functional form defining the number of halos as a function of halo
+			mass that follows:
+			\begin{equation}
+				\int_0^{\infty} f(\nu)\mathrm{d\nu} = 1
+			\end{equation}
+			\\
+			where, $\nu$ is called the peak-width of the density peak of the halo 
+			and characterize the mass of the halo. This condition states the assumption of the
+			halo model that all the mass in the Universe is inside the haloes. 
 
-	\item Halo bias: As the halos are biased tracers of the matter, one important ingredient is 
-			the description of the bias.  
+	\item Halo bias $b(\nu)$: As the halos are biased tracers of the matter, one important ingredient is 
+			the description of the bias. This term is important while evaluating the correlation
+			between different haloes. In the halo model framework, halo bias follows,
+			\begin{equation}
+				\int_0^{\infty} f(\nu) b(\nu) \mathrm{d\nu} = 1
+			\end{equation}
 \end{itemize}
 
 Once these four ingredients are defined, 
@@ -909,10 +940,10 @@ total matter power spectrum is split into two main contributions,
 	P(k) = P_{1h}(k)  + P_{2h}(k)
 \end{equation}
 \\
-The first time on the right is referred as the one-halo term ($P_{1h}(k)$) and gives
+The first time on the right is referred as the {\it one-halo} term ($P_{1h}(k)$) and gives
 the correlations of the dark-matter particles inside the halo and computed as
 the auto-convolution of the halo profile and dominates at the smaller scales. 
-The second term is referred as the two-halo
+The second term is referred as the {\it two-halo}
 term ($P_{2h}(k)$) and gives the correlation between different haloes. As the 
 dark-matter haloes are biased tracers of the mass distribution, this term has a 
 contribution from the halo bias and dominates over the larger scales. 
@@ -961,8 +992,12 @@ where, the three terms on the right are the Gaussian, Non-Gaussian and super-sam
 			\end{equation}
 			\\
 			where, $L$ is the box size and $dk$ is the bin width. The Gaussian part 
-			contributes only to the Gaussian part of the covariance and gives no 
-			information about the correlated errors between different modes. 
+			contributes only to the diagonal elements of the covariance matrix and gives no 
+			information about the correlated errors between different modes. As we have
+			only one Universe to observe, large scale modes are very few and hence
+			the covariance of the matter power spectrum is dominated by the Gaussian
+			part for small $k$. It is also popularly known as {\it cosmic variance}
+			or {\it sample variance}.
 
 	\item Non-Gaussian part, $\mathbb{C}^{NG}(k,k^{\prime})$: The non-Gaussian covariance term is 
 			is induced by the non-linearity and arising from the connected 4-point function or the trispectrum and due to the fact that the phases of $\tilde{\delta}(k)$ are 
@@ -986,20 +1021,22 @@ where, the three terms on the right are the Gaussian, Non-Gaussian and super-sam
 \end{itemize}
 
 The accurate quantification of all these terms is crucial in order to perform any
-likelihood analysis based on observables modelled on matter power spectrum. As we
+likelihood analysis based on observables modelled on the matter power spectrum. As we
 advance in the quality of data, the smaller scales gives more constraining power 
 over cosmological parameter space, the contributions from non-Gaussian part and SSC
 becomes very important and ignoring them may overestimates the constraints on the 
-cosmological parameters or bias and mislead the interpretation. 
+cosmological parameters and mislead the interpretation by adding biases to the
+cosmological parameters.
 
 
 
 
 
 
-\subsection{Baryonic contributions}
+\subsection{Baryonic contributions}\label{sec:baryons}
+
 It is relatively easy to model and describe the clustering of matter that interacts with only 
-one force (gravity) aka dark-matter. But we exist and not made up of dark-matter, instead by the
+one force (gravity). But we exist and not made up of dark-matter, instead by the
 ordinary matter we know as baryons which interacts other than gravity too and exhibit pressure. 
 Even the Universe with baryons and dark-matter would behave very similar at large scales,
 but at small scales where the baryonic processes are important, dark-matter only Universe is
@@ -1026,7 +1063,7 @@ volumes are very expensive and may still be out of the reach to the current comp
 abilities. Some examples of the hydrodynamical simulations are \cite{}
 
 The other way is to include the baryonic processes is to perturb the density profile 
-of the halos with baryonic processes and model with the halo model. This approach can 
+of the halos with baryonic processes and model with the halo model framework. This approach can 
 be calibrated with simulations or observations but still remain analytical with some 
 free parameters to be measured by data directly. 
 For a similar approach see chapter \ref{paper:baryoniceffects}
@@ -1061,7 +1098,9 @@ by a factor of 2,
 \\
 A measurement of this kind was made for background stars during a total solar eclipse
 in 1919 with sufficient accuracy and made it clear that indeed GR prediction is 
-correct. This gives tremendous success to Einstein's theory. In 1924, Chwolson
+correct. This gives tremendous success to Einstein's theory. 
+
+In 1924, Chwolson
 considered a simple geometry where the source is exactly behind the lens
 and concluded that instead of multiple images, the sources will be seen
 as a ring around the lens. These days they are observed and referred as {\it Einstein Rings}.
@@ -1076,8 +1115,8 @@ by a lens is variable, it is also possible to calculate the difference
 in the light travel time between two images of the same source. In 1960 Refsdal
 made such a calculation and pointed out that it depends on the mass of the lens
 and distances between lens, observer and source; if they are known it can be 
-used to measure the Hubble constant. For an extensive review on the gravitational
-lensing see \citep{1992grle.book.....S,2001stgl.book.....P,2006glsw.conf.....M}.
+used to measure the Hubble constant and infer other cosmologycal parameters. 
+
 
 
 In 1979, the very first time CCD detectors replaced the traditional photographic
@@ -1124,7 +1163,7 @@ The first term on the right is due to the geometry of the system
 and the second term is due to the gravitational potential of the lens.
 As the total time delay is proportional to the comoving distance
 to the lens, it is inversely proportional to the Hubble constant. 
-Also, $\bar{\kappa}(\theta) = \kappa\ (\chi^{\prime}/\chi^{\prime}-\chi_l)$ and
+Also, $\bar{\kappa}(\theta) = \kappa\ (\chi^{\prime}/(\chi^{\prime}-\chi_l))$ and
 $\kappa$ is the surface mass density of the lens defined as,
 \begin{equation}
 	\kappa(\theta) = \dfrac{4\pi G}{c^2} \dfrac{\chi}{1+z_l}
@@ -1132,7 +1171,7 @@ $\kappa$ is the surface mass density of the lens defined as,
 \end{equation}
 
 $t(\theta)$ is a continuous function and can be visualised as contours
-of constant time delays at the lens place. For a source at infinity,
+of constant time delays at the lens plane. For a source at infinity,
 $\bar{\kappa}=\kappa$.
 Images cannot form everywhere, because not every light
 ray reaches the observer, they will form only at coordinates where $t(\theta)$
@@ -1142,14 +1181,14 @@ be calculated by finding the roots of the equation,
 	\nabla t = 0 \quad \Rightarrow \quad \beta = \theta - \alpha(\kappa,\theta)
 \end{equation}
 \\
-This equation also known as the lens-equation and relates the true 
+This equation also known as the {\it lens-equation} and relates the true 
 position of the source to the observed position of its images with
 a deflection angle $\alpha$ that depends on the surface mass density
 of the lens and position. If this equation has more than one solution,
 there will be multiple images of the source.
 
 The second derivative of equation \ref{eqn:timedelay} gives the
-deformation matrix (or the inverse magnification matrix),
+{\it deformation matrix} (or the {\it inverse magnification matrix}),
 
 \begin{equation}
 	\nabla^2 t = \begin{pmatrix}
@@ -1161,21 +1200,20 @@ deformation matrix (or the inverse magnification matrix),
 where, $\gamma_1$ and $\gamma_2$ are the two components of the shear (or the tidal
 gravitational force). If this matrix is singular, it gives the curves of the
 infinite magnifications also known as {\it caustics}.
-
+For an extensive review on the theory of gravitational
+lensing see \citep{1992grle.book.....S,2001stgl.book.....P,2006glsw.conf.....M}.
 
 
 \subsection{Applications}
 
 Now a days, lensing is a very active field of research and find its application
 in variety of problems in cosmology and astrophysics. 
-There are various observables due to the lensing phenomenon. like multiple-images of the source, time 
+There are various observables due to the lensing phenomenon. For example 
+multiple-images of the source, time 
 delays amongst the multiple-images, shape distortion of the source, change in brightness
 of the source etc. Each of these observables can be utilised to infer or model various
-aspects: from the mass distribution of the lens to cosmology. As lensing phenomenon depends 
-on the total mass of the lens and not on its nature (dark-matter or baryonic), it is
-so far the most unbiased technique to probe the distribution of matter in the Universe
-and to do cosmology.
-Some of the applications are as follows,
+aspects: from the mass distribution of the lens to cosmology. 
+Some of the main applications of lensing are as follows,
 \begin{itemize}
 	\item Mass distribution of lens: the deflection of light when passing through
 			the gravitational field of the lens depends on the total mass or the
@@ -1196,7 +1234,7 @@ Some of the applications are as follows,
 			Energy Task Force (DETF), weak gravitational lensing is the most powerful
 			tool in order to put constraints on the cosmological parameter given
 			the controlled systematics of the WL observables. This will be discussed
-			in more details in section \ref{}. Further, WL has also found its application
+			in more details in section \ref{sec:wl}. Further, WL has also found its application
 			in constraining bias parameters which describe the statistical studies
 			of the distribution of galaxies and dark-matter. 
 
@@ -1328,7 +1366,9 @@ time delays.
 
 Weak gravitational lensing (or WL henceforth) referred to the phenomenon when 
 the lensing is not strong enough to produce multiple images but strong enough
-to distort the shape of the source. The deformation of the shape of the observed galaxies
+to distort the shape of the source. In WL, deformation matrix is close
+to unitary matrix.
+The deformation of the shape of the observed galaxies
 due to the intervening matter is referred to as {\it cosmic shear}. This
 signal is very small, nearly 1-2$\%$ of the intrinsic ellipticity of the source 
 and can only be measured statistically under the assumption that the intrinsic 
@@ -1338,7 +1378,7 @@ it tends to align tangentially towards the centre of the mass concentration.
 
 As the signal of the weak lensing cosmic shear is very small as compared to the 
 intrinsic ellipticity of the galaxies, this study did not come into play until
-the recent advancement in the observational and technical advancements. Soon 
+the recent observational and technical advancements. Soon 
 after the detection of the giant luminous arc in Abell 370, it was observed
 that few more objects that are not as stretched as the giant arc but still show
 high axis-ratio and are aligned tangentially towards the centre of the cluster. They
@@ -1394,7 +1434,9 @@ approximation), one can write the lensing weights as,
 					\dfrac{(\chi^{\prime}-\chi)}{\chi^{\prime}}\mathrm{d}\chi^{\prime}
 \end{equation}
 \\
-where, $n(\chi)$ gives the distribution of sources as a function of comoving distance or redshift.
+where, $n(\chi)$ gives the distribution of sources as a function of comoving distance or redshift
+and $\bar{n}$ is the number of sources per unit area. These quantities depends on the
+experiments like Euclid, LSST etc.
 
 As mentioned earlier too, the density field $\delta$ is assumed to be a random field
 and only its statistical properties can be modelled, not the individual realisations. 
@@ -1476,7 +1518,8 @@ Universe is very important
 in order to model the cosmological observables. Statistically, the modelling of the
 matter power spectrum or 2PCF is important if one wants to do cosmology because 
 the matter power spectrum underlies many
-cosmological observables like BAO, weak lensing, galaxy clustering, redshift
+cosmological observables like Baryon Accoustic Oscillations (BAO), 
+weak lensing, galaxy clustering, redshift
 space distortions etc. Also, the modelling of the 
 covariance matrix of the matter power spectrum is vital in order to do correct
 likelihood analysis and testing cosmological models. Finally baryonic physics 
