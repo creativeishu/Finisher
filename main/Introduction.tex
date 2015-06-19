@@ -812,9 +812,12 @@ At late times the approximation $\delta \ll 1$ is not valid at small scales. So,
 description for the structure formation and evolution becomes impossible. The solution then would 
 be to rely on higher order perturbation theory (PT), physical approximations to the
 distribution of the matter in the Universe (e.g., the halo model), 
-semi-analytic approaches (e.g., fitting functions, modified halo model etc.) or simulations. 
+semi-analytic approaches (e.g., fitting functions, modified halo model etc;
+see \cite{Takahashi:2012em,Smith:2002dz}) or simulations. 
 The higher order PT are quite useful for many applications but it also starts to 
-fail as $\delta$ becomes order of unity. The physical approximation methods turn 
+fail as $\delta$ becomes order of unity (for a comparatively old
+but thorough review see \cite{1994FCPh...15..209D}). 
+The physical approximation methods turn 
 out to be very powerful in predicting the observables approximately 
 but since they are based on strong assumption which are 
 certainly not true, they either become unreliable when precision is required or have
@@ -868,7 +871,16 @@ larger will be the total number of particles in order to match the critical dens
 the Universe today and therefore, one can resolve smaller scale structures. However, 
 there is always a trade-off between large volumes and higher resolutions. 
 
-{\bf Some examples of top simulations here...Emulator, Skillman, Aurel's simulations etc.} 
+
+Recently, Skillman et al. \cite{2014arXiv1407.2600S} has made available
+a very ambitious N-body simulation of box size $8 h^{-1} \mathrm{Mpc}$ with
+a billion particles. The total size of the output is close to 55 TB.
+Schneider et. al. \cite{2015arXiv150305920S} studied various cosmological
+N-body simulation codes (RAMSES,PKDGRAV and GADGET2) and computed power 
+spectrum giving full analysis of volume and resolutions required for 
+a precise measurement of the matter power spectrum.
+Heitmann et al. \cite{2009ApJ...705..156H,2010ApJ...715..104H,2010ApJ...713.1322L,2014ApJ...780..111H} has made a available an accurate matter power spectrum
+emulator based on 38 cosmological N-body simulations. 
 
 Analysing the output of an $N-$body simulation is a fun exercise and a lot can be learnt
 from it. First, merely the visualisation of the evolution of particle positions gives
@@ -884,7 +896,8 @@ bias etc and is beyond the scope of this work.
 
 \subsubsection{The halo model}
 
-The halo model is one of the more successful analytic and physical framework to describe
+The halo model \cite{1977ApJ...217..331M,2000ApJ...543..503M,2000MNRAS.318.1144P,2000MNRAS.318..203S} 
+is one of the more successful analytic and physical framework to describe
 the clustering and growth of structures in the Universe. In this framework, all the matter
 in the Universe is assumed to be in the form of spherical halos whose radius are defined by a 
 density threshold, usually $R_{200}$ which is the distance from the centre of the halo where
@@ -904,8 +917,10 @@ There are particularly four ingredients to model the power spectrum in the halo 
 \begin{itemize}
 	\item Linear power spectrum $P_{\rm Lin}(k)$.
 
-	\item Radial density profile of the halos. Usually for dark-matter only Universe, the so-called
-			Navarro-Frenk-White (NFW) is used as a Universal profile completely characterized by the
+	\item Radial density profile of the halos. 
+			Usually for dark-matter only 	Universe, the so-called
+			Navarro-Frenk-White (NFW; \cite{1997ApJ...490..493N}) 
+			is used as a Universal profile completely characterized by the
 			mass (or concentration) of the halo,
 			\begin{equation}
 				\rho(r) = \dfrac{\rho_s}{(r/r_s)(1+r/r_s)^2}
@@ -949,7 +964,8 @@ dark-matter haloes are biased tracers of the mass distribution, this term has a
 contribution from the halo bias and dominates over the larger scales. 
 
 The halo model is discussed in much more details in chapter \ref{paper:analyticmodel} 
-and \ref{paper:baryoniceffects}.
+and \ref{paper:baryoniceffects} but for a more extensive review see
+\cite{2002PhR...372....1C}.
 
 
 \subsection{Covariance matrix of matter power spectrum}
@@ -1003,15 +1019,20 @@ where, the three terms on the right are the Gaussian, Non-Gaussian and super-sam
 			is induced by the non-linearity and arising from the connected 4-point function or the trispectrum and due to the fact that the phases of $\tilde{\delta}(k)$ are 
 			not random. This term gives the correlated errors between
 			different wave-vectors and also contributes to the off-diagonal terms
-			of the covariance matrix. 
+			of the covariance matrix. This contribution is vanishing in the early 
+			times if the initial density field is Gaussian and so all modes evolve
+			independently. So, when the non-linearity enters and modes become
+			correlated, the dispersion of the power spectrum increases 
+			\cite{1999MNRAS.308.1179M}.
 
 	\item Super-sample covariance (SSC), $C^{SSC}(k,k^{\prime})$: The SSC is the sampling
 			error due to the coupling to the modes larger than the size of the survey or
-			simulation. Because this contribution appear constant as the survey scale, it 
+			simulation. It was first reported by \cite{2006MNRAS.371.1188H}.
+			Because this contribution appear constant as the survey scale, it 
 			can be viewed as a curvature term to the survey which can further be mimic
 			by the change in background density. Therefore this term can be modelled
 			completely by the response of the change in background density to the
-			matter power spectrum,
+			matter power spectrum \cite{2013PhRvD..87l3504T,2014PhRvD..90j3530L},
 			\begin{equation}
 				\mathbb{C}^{SSC}(k,k^{\prime}) = \sigma_b^2 \dfrac{\partial P(k)}{\partial \delta_b}
 										\dfrac{\partial P(k^{\prime})}{\partial \delta_b}
@@ -1026,11 +1047,11 @@ advance in the quality of data, the smaller scales gives more constraining power
 over cosmological parameter space, the contributions from non-Gaussian part and SSC
 becomes very important and ignoring them may overestimates the constraints on the 
 cosmological parameters and mislead the interpretation by adding biases to the
-cosmological parameters.
-
-
-
-
+cosmological parameters 
+\cite{2000ApJ...537....1W,2007MNRAS.375L...6S,2008ApJ...686L...1L,2009MNRAS.395.2065T,2011MNRAS.416.1045K}.
+In order to estimate the full covariance matrix correctly, matter power spectrum
+need to be estimated from large sample of cosmological simulations
+\cite{2013MNRAS.432.1928T,2009ApJ...700..479T,2015MNRAS.446.1756B}.
 
 
 \subsection{Baryonic contributions}\label{sec:baryons}
@@ -1043,7 +1064,9 @@ but at small scales where the baryonic processes are important, dark-matter only
 not a good description. Many recent works demonstrate different scales at which the baryonic
 contributions are significant in the matter power spectrum. These scales vary between
 $k\sim 0.3-0.6 h \mathrm{Mpc}^{-1}$ which transform into a physical scales smaller than
-$\sim 10-15 h^{-1} \mathrm{Mpc}$. Future generation surveys like Euclid and LSST are
+$\sim 10-15 h^{-1} \mathrm{Mpc}$ (see \cite{2011MNRAS.415.3649V,2014MNRAS.440.2997V}). 
+Future generation surveys like Euclid \cite{2010arXiv1001.0061R,2013LRR....16....6A} and LSST 
+\cite{2009arXiv0912.0201L} are
 expected to provide data with very high resolution and expected to probe scales $k \sim 10 h/Mpc$
 or physical scales of about $0.5 h^{-1} \mathrm{Mpc}$ where the baryonic contribution 
 are very significant.
@@ -1060,10 +1083,19 @@ Adiabatic contraction or expansion or dark-matter due to baryons.
 When there is very little understanding of star formation processes, other processes can be 
 modelled with some approximations. But carrying out these calculations in big cosmological 
 volumes are very expensive and may still be out of the reach to the current computational 
-abilities. Some examples of the hydrodynamical simulations are \cite{}
+abilities. 
+Different hydrodynamical simulations has found in remarkable agreement
+with different observations. For example, quasar absorption line observations
+of the Ly-$\alpha$ forest \cite{1994ApJ...437L...9C,1998MNRAS.297L..49T,1998ApJ...495...44C}, 
+properties of high-column density HI absorbers \cite{2008MNRAS.390.1349P,2011ApJ...743...82M,2013MNRAS.430.2427R}, sizes of disc galaxies \cite{2004ApJ...607..688G,2011MNRAS.410.1391A,2011ApJ...742...76G,2013MNRAS.436.3031V,2014MNRAS.437.1750M}, intergalactic
+gas \cite{2012MNRAS.420..829O,2012MNRAS.425.1270S} etc. An example of the state of the art 
+hydrodynamical simulation is the
+EAGLE project \cite{2015MNRAS.446..521S}. 
+
 
 The other way is to include the baryonic processes is to perturb the density profile 
-of the halos with baryonic processes and model with the halo model framework. This approach can 
+of the halos with baryonic processes and model with the halo model framework 
+\cite{2014arXiv1410.6826M}.  This approach can 
 be calibrated with simulations or observations but still remain analytical with some 
 free parameters to be measured by data directly. 
 For a similar approach see chapter \ref{paper:baryoniceffects}
@@ -1115,7 +1147,8 @@ by a lens is variable, it is also possible to calculate the difference
 in the light travel time between two images of the same source. In 1960 Refsdal
 made such a calculation and pointed out that it depends on the mass of the lens
 and distances between lens, observer and source; if they are known it can be 
-used to measure the Hubble constant and infer other cosmologycal parameters. 
+used to measure the Hubble constant and infer other cosmologycal parameters
+\cite{2004tomu.conf..231R}. 
 
 
 
@@ -1231,7 +1264,7 @@ Some of the main applications of lensing are as follows,
 			of the same source. Weak lensing (WL) by large scale structures 
 			can also be used in order to put
 			strong constraints on cosmological parameters. According to the Dark 
-			Energy Task Force (DETF), weak gravitational lensing is the most powerful
+			Energy Task Force (DETF; \cite{2006astro.ph..9591A}), weak gravitational lensing is the most powerful
 			tool in order to put constraints on the cosmological parameter given
 			the controlled systematics of the WL observables. This will be discussed
 			in more details in section \ref{sec:wl}. Further, WL has also found its application
@@ -1241,11 +1274,13 @@ Some of the main applications of lensing are as follows,
 	\item Natural telescopes: since the gravitational lenses can magnify the sources, it 
 			can be used as a natural telescope to study high redshift galaxies and the Universe
 			in general which is otherwise not possible to observe. One of the example of 
-			very ambitious project is the Hubble Frontier Fields (HFF). 
+			very ambitious project is the Hubble Frontier Fields 
+			(HFF; \cite{2014AAS...22325401L}). 
 \end{itemize}
 
 
-There are other applications as well like: constraining the number density of dense objects, searches
+There are other applications as well like: constraining the number density 
+of dense objects, searches
 for exo-planets etc, but not discussed in details in this manuscript. 
 
 
@@ -1331,23 +1366,26 @@ several methods for lens inversion. Many of those procedures put strong constrai
 on the mass distribution of the lens and assume a functional form and hence are called
 as {\it parametric} methods. These methods mainly involve to find the optimal values 
 of the free parameters of the functional form of the mass distribution of the lens. 
-For example \cite{}, \cite{},\cite{}.
+For example LENSTOOL \cite{2011ascl.soft02004K}.
 
 There are some methods which invert the lens with minimal assumptions and without
 assuming any prior form of the mass distribution of the lens, and are referred as
 {\it non-parametric} methods. In these methods, the number of free parameters are often
 too large, usually some building block of the total mass maps, and hence larger
-statistical consideration is needed. For example, \cite{}, \cite{}.
+statistical consideration is needed. For example, Pixelens \cite{2011ascl.soft02007S}, 
+GRALE \cite{2006MNRAS.367.1209L}.
 
 Where parametric models are more efficient, non-parametric models are more
 accurate and unbiased. In this work we used a non-parametric lens inversion
-library called as GRALE \cite{} to trace the mass distribution of some very massive
+library called as GRALE \cite{2006MNRAS.367.1209L,2007MNRAS.380.1729L,2009MNRAS.397..341L} 
+to trace the mass distribution of some very massive
 galaxy clusters. The building blocks of the mass map are the Plummer spheres, where
 other choices such as squares and Gaussian spheres are also available in the library, 
 and the total mass map is the super position of these building blocks. GRALE uses
-a genetic algorithm \citep{} to find optimal solution to the weights of the building 
+a genetic algorithm (for a review see \citep{1995ApJS..101..309C}) 
+to find optimal solution to the weights of the building 
 blocks and the resolution of the mass maps is adaptively increased (or decreased)
-For more detailed documentation see \cite{}.
+For more detailed documentation see \cite{2009MNRAS.397..341L}.
 
 Another observable in SL is the time delays between multiple images
 of the source. The light rays from the same source travel different directions
@@ -1355,10 +1393,11 @@ and due to the curvature of space time, depending upon the mass distribution
 of the lens, they travel different distances before they reach the same 
 observer. Because the distances in cosmology depends on the Hubble constant
 or the expansion rate of the Universe, one can calculate the value of the
-Hubble constant given measured time delays and mass distribution of the source. 
+Hubble constant given measured time delays and mass distribution of the source
+\cite{2004tomu.conf..231R}. 
 However, it is also possible to have the Hubble constant given and put
 additional constraints on the mass distribution of the lens using measured
-time delays. 
+time delays \cite{2015PASJ...67...21M}.
 
 
 %----------------------------------------------
@@ -1436,7 +1475,7 @@ approximation), one can write the lensing weights as,
 \\
 where, $n(\chi)$ gives the distribution of sources as a function of comoving distance or redshift
 and $\bar{n}$ is the number of sources per unit area. These quantities depends on the
-experiments like Euclid, LSST etc.
+experiments like Euclid \cite{2013LRR....16....6A}, LSST \cite{2009arXiv0912.0201L} etc.
 
 As mentioned earlier too, the density field $\delta$ is assumed to be a random field
 and only its statistical properties can be modelled, not the individual realisations. 
@@ -1457,7 +1496,8 @@ If the power spectrum of the convergence field $P_{\kappa}(\ell)$ is observable,
 used to constrain the 3D matter power spectrum and hence the cosmological parameters. Further,
 the same quantity can also be calculated in different redshift bins (instead of just one) and
 auto and cross spectra can be obtained. This process is known as 
-lensing {\it tomography} and it has extra constraining power over cosmological parameters. 
+lensing {\it tomography} and it has extra constraining power over cosmological parameters
+\cite{1999ApJ...522L..21H,2004MNRAS.348..897T}.
 
 Now the last problem is to relate the $P_{\kappa}(\ell)$ to something that is observable, 
 possibly the cosmic shear. This is rather direct, as in the complex plane Fourier transform
@@ -1578,7 +1618,8 @@ to answer few of these question and build a better understanding of distribution
 matter in the Universe and its clustering properties. 
 
 \begin{itemize}
-\item	The very first project is a mass modelling problem in strong lensing cluster. Here we
+\item	The very first project is a mass modelling problem in strong lensing cluster
+	\cite{2014MNRAS.439.2651M}. Here we
 	used a publicly available code GRALE, modified it for an optimum solution and resolution,
 	and put tight constraints on the mass distribution of few lensing clusters. By studying
 	the mass and light distribution of these clusters, we imply that it is possible 
@@ -1588,17 +1629,19 @@ matter in the Universe and its clustering properties.
 \item	In a similar project, we also show that time delay information is very useful in 
 	order to put additional constraints on the central region of the clusters which can't 
 	be resolved directly, specially when the steepness degeneracy is broken by the 
-	presence of background sources at different redshift.
+	presence of background sources at different redshift \cite{2015PASJ...67...21M}.
 
 \item	We also presented a (semi) analytic model for the matter power spectrum, which is
 	computationally inexpensive and compute the power spectrum to a percent level 
-	accuracy up to k $\sim$ 1 h/Mpc. The motivation of this model is the halo model
+	accuracy up to k $\sim$ 1 h/Mpc \cite{2014MNRAS.445.3382M}. 
+	The motivation of this model is the halo model
 	and we also derived simple form of the covariance matrix. We proposed a way to 
 	marginalise over baryonic effects. 
 
 \item	In a similar project to the previous one, we used the halo model in order to directly
 	model the effects of baryons on the matter power spectrum and to the extension on the
-	weak lensing shear power spectrum. The effects are small at comparatively large
+	weak lensing shear power spectrum \cite{2014arXiv1410.6826M}. 
+	The effects are small at comparatively large
 	scales but as the next generation surveys are expected to measure these quantities 
 	to very small scales, the baryonic effects are important to take into account. If not, 
 	it will add biases to the cosmological parameters up to 10 sigma. 
@@ -1628,20 +1671,6 @@ galaxy formation processes and evolution of the Universe.
 
 %------------------------------------------------------------------------------
 
-\clearpage
-\cite{2014MNRAS.440.2290M}
-
-\cite{2014MNRAS.439.2651M}
-
-\cite{2014A&A...567A..65B}
-
-\cite{2014MNRAS.445.3382M}
-
-\cite{2014arXiv1410.6826M}
-
-\cite{2015PASJ...67...21M}
-
-\cite{2015arXiv150403388M}
 
 
 

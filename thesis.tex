@@ -77,6 +77,15 @@
 \include{main/Introduction}
 \cleardoublepage
 
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand{\bibname}{Bibliography}
+\bibliographystyle{tail/mn2e}
+\bibliography{tail/bibliography}
+
+\clearpage
+
+
 \include{papers/p1}
 \cleardoublepage
 
@@ -92,9 +101,6 @@
 %\include{papers/p5}
 %\cleardoublepage
 
-\phantomsection
-\addcontentsline{toc}{chapter}{Bibliography}
-\renewcommand{\bibname}{Bibliography}
 %\pagestyle{myheadings}
 %\markboth{References}{References}
 %\addcontentsline{toc}{chapter}{References}
@@ -102,8 +108,7 @@
 %\bibliographystyle{naturemag.bst}
 %\bibliographystyle{acm}
 
-\bibliographystyle{tail/mn2e}
-\bibliography{tail/bibliography}
+
 
 
 \end{document}
