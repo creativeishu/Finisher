@@ -1,10 +1,88 @@
 \chapter{Paper5: Quantifying sub-structures in lensing clusters}\label{paper:substructures}
 
+Numerical simulations has provided an insight to the theory of structure formation. 
+Large collapsed objects, like cluster of galaxies, form by a series of mergers of 
+small mass systems, like galaxies or group of galaxies, and associated gas, dark-matter
+halos etc. The abundance of sub-structures in a merging system can be quantified 
+to study the merging stage of the cluster. This evaluation is trivial using simulations. 
+The observed macroscopic properties of galaxies and galaxy clusters, like gas mass, bulge sizes
+etc., can be well reproduced using the current generation hydrodynamical simulations. 
+However, a more ambitious comparison would be the total mass distribution in the
+clusters. As the total mass distribution in an ongoing merger is the result
+of an initial random field evolved with deterministic forces, only statistical
+properties can be derived, and not the actual distribution. The derived statistical
+quantities like radial density profile, sub-structure mass function etc., can be
+compared to that of the observed clusters to validate the simulation
+ingredients. 
+
+Tracing the mass distribution in observed clusters is a non-trivial task, as 
+mass is not an observable, its light. Gravitational lensing, particularly
+strong lensing, is an unbiased and
+ideal tool to estimate the total mass distribution. However, the resolution of the
+reconstructed mass maps depends on the priors and the lensing data. In order to
+have unbiased estimates, priors must be minimal, and the total mass distribution
+must be inferred using lensing data alone. Therefore, we need non-parametric
+mass reconstruction methods without light-traces-mass assumption, and higher
+density of lensed images of the background sources, in order to correctly model 
+the mass distribution of the lens (or the cluster).
+
+Such large quantity of lensing data has recently been provided by Hubble Space
+Telescope (HST) under Hubble Frontier Field (HFF) discretionary program. HFF 
+consists of six massive cluster of galaxies in redshift range 0.3 to 0.5. The HFF
+lensing dataset contains nearly 200 lensed images in each cluster, along 
+with the good estimates of their redshift. 
+
+In this paper, we produced mass models for the six HFF clusters using pre-HFF
+data, and for one amongst them using HFF data. We report the gain in the
+spatial resolution of mass maps using HFF data over pre-HFF data. To make
+these mass maps, we use GRALE, a strong gravitational lensing non-parametric 
+mass reconstruction technique, without assuming any light information from
+the clusters, except for their redshift. The mass distribution of all HFF
+clusters show elongation, multiple-cores, and many sub-structures, 
+indicating a recent major merger. Therefore, extracting radial profiles
+of the clusters is not very encouraging. Also, because gravitational lensing
+can only estimate the sky-projected 2D mass distribution, many sub-structures
+are erased, and an estimate of the sub-structure mass function
+cannot be derived without LTM assumption. 
+
+We proposed the power spectrum of the 2D mass distribution as an estimator
+for the sub-structure. We measured this quantity for all HFF clusters, and 
+found large power at small scales for clusters at low redshift, or with
+larger number of lensed images. We further made similar measurements of the
+power spectrum from simulated clusters, both dark-matter only and 
+hydrodynamical, and
+found that the average power in simulated clusters is larger than that
+of the observed clusters at small scales. We discussed the possible reasons
+for this could be: (i) limited lensing data, (ii) contrast in redshift between
+observed clusters and simulations, or (iii) lack of physics in simulations.
+
+
+{\bf Role:} For this project, I used the mass maps made by Professor
+Liliya. L. R. Williams and Kevin Sebesta. 
+I proposed the idea to measure the 2D power spectrum
+of the mass distribution. I started
+by doing a null test, which shows equal power at all scales if there is
+only noise in the field. I then generated three random cluster fields 
+for a given power spectrum using a code written by Dr. Prasenjit Saha. I 
+measured the power spectrum of these simulated fields, and compared it to 
+the original power spectrum; a good agreement was found. I accumulated 
+simulated clusters data from Davide martizzi, and measured the power spectrums
+of all 66 clusters, each for DMO and hydrodynamical simulations. Finally 
+I made average power spectrums of simulated and observed clusters, and
+draw a comparison.
+
+
+
+
+
+
+
 
 
 This paper has been submitted to {\it Monthly Notices of the Royal Astronomical
-Society} (MNRAS), and currently under review.
-
+Society} (MNRAS), and is currently under review.
+\\
+Arxiv: \url{}
 
 \clearpage
 \includepdf[pages=-]{/Users/Irshad/github/HubbleFrontierField/paper1_substructures/ms.pdf}
