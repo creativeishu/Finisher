@@ -35,38 +35,39 @@ power spectrum in this framework. This model can be used to project and estimate
 weak lensing power spectrum and utilise the future generation surveys
 to put strong and unbiased constraints on the cosmological parameters.
 
-{\bf Role:} Under the supervision of Professor Uros Seljak, I started
-this project with analytical calculations using the halo model. The
+{\bf Role:} This project was done under the supervision of Professor Uros Seljak. 
+The startig point was analytical calculations using the halo model. The
 idea was to expand the 1-halo term in Taylor series, and analytically
-evaluate the coefficients. Next, I accumulated 38 matter power spectra
+evaluate the coefficients. I accumulated 38 matter power spectra
 from the cosmic emulator, each for its original cosmological node. I
 also evaluated Zeldovich power spectra using code from Zvonimir Vlah
 for the same 38 cosmological models and three redshifts (0.0,0.5,1.0).
-To the difference between the full matter power spectra and Zeldovich
-approximation, I fitted the function $A_0 - A_2k^2 + A_4k^4$, and compared
-the fitted coefficients to that evaluated analytically from the halo model. 
+I fitted the function $A_0 - A_2k^2 + A_4k^4$ to the difference between 
+the full matter power spectra and Zeldovich
+approximation, and compared
+the fitted coefficients with those evaluated analytically from the halo model. 
 We found big differences in $A_2$ and $A_4$ coefficients, whereas
 $A_0$ remains the same. This shows the divergence of the halo model
 from the true matter power spectrum in non-linear scales. 
 I found very strong correlation between fitted coefficients and $\sigma_8$,
-and therefore we fit them using a single power law for all three redshifts
-and computed the residuals. 
+and therefore we fitted them using a single power law for all three redshifts
+and computed the corressponding residuals. 
 Further I fitted the residuals for its correlation to the 
 effective slope $n_{\rm eff}$.
 We provide these fitting functions in the paper to estimate the 
 coefficients of the 1-halo term using the cosmological models
 and redshifts. Given these fitting functions, we computed the matter
 power spectra, and compared them to the original emulator output. 
-I found an agreement of about a percent up to $k\sim 0.8 h^{-1}\mathrm{Mpc}$.
+I found an agreement of about a percent up to $k\sim 0.7 h^{-1}\mathrm{Mpc}$.
 I accumulated the power spectra from Van daalen et al. 2011, for both
-dark-matter only and hydrodynamical simulations, 
-and to the difference I fitted the similar function. 
-The only difference was, this time I 
-recover the change in the coefficients due to the baryonic effects. 
+dark-matter only as well as hydrodynamical simulations, 
+and to their difference, I fitted the similar function. 
+The only alteration was that this time I 
+recovered the change in the coefficients due to the baryonic effects. 
 We found that $A_0$ is indifferent to the baryonic effects, while
-$A_2$ and $A_4$ changes significantly, implying the conservation of
+$A_2$ and $A_4$ change significantly, implying the conservation of
 mass inside the halo where the profile is changing due to baryons. 
-Following the same vein, we argue that at scales where only Zeldovich
+In the the same vein, we argued that at scales where only Zeldovich
 term is important, the covariance is dominated by the cosmic variance.
 To compute the total covariance, we can compute the variance of 
 each of the coefficients. However, due to the baryonic effects contaminating
